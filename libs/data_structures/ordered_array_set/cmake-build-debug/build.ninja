@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/Анна/Desktop/сонины$ программы/second_semester/W
 
 build cmake_object_order_depends_target_ordered_array_set: phony || CMakeFiles/ordered_array_set.dir
 
-build CMakeFiles/ordered_array_set.dir/library.c.obj: C_COMPILER__ordered_array_set_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/ordered_array_set/library.c || cmake_object_order_depends_target_ordered_array_set
-  DEP_FILE = CMakeFiles\ordered_array_set.dir\library.c.obj.d
+build CMakeFiles/ordered_array_set.dir/ordered_array_set.c.obj: C_COMPILER__ordered_array_set_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/ordered_array_set/ordered_array_set.c || cmake_object_order_depends_target_ordered_array_set
+  DEP_FILE = CMakeFiles\ordered_array_set.dir\ordered_array_set.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ordered_array_set.dir
   OBJECT_FILE_DIR = CMakeFiles\ordered_array_set.dir
@@ -63,7 +63,7 @@ build CMakeFiles/ordered_array_set.dir/library.c.obj: C_COMPILER__ordered_array_
 #############################################
 # Link the static library libordered_array_set.a
 
-build libordered_array_set.a: C_STATIC_LIBRARY_LINKER__ordered_array_set_Debug CMakeFiles/ordered_array_set.dir/library.c.obj
+build libordered_array_set.a: C_STATIC_LIBRARY_LINKER__ordered_array_set_Debug CMakeFiles/ordered_array_set.dir/ordered_array_set.c.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles\ordered_array_set.dir
   POST_BUILD = cd .
