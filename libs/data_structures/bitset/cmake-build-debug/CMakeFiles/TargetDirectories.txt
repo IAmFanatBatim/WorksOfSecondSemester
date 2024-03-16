@@ -1,0 +1,3 @@
+C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/data_structures/bitset/cmake-build-debug/CMakeFiles/bitset.dir
+C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/data_structures/bitset/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/data_structures/bitset/cmake-build-debug/CMakeFiles/rebuild_cache.dir
