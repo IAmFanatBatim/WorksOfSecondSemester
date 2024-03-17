@@ -24,15 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-be080e909413aedec465.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-17T14-31-40-0301.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-data_structures-Debug-9087ca807eceeb59e9c6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector_test.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +70,6 @@
 }</component>
   <component name="RunManager" selected="C/C++ File.main.c">
     <configuration name="WorksOfSecondSemester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorksOfSecondSemester" TARGET_NAME="WorksOfSecondSemester" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WorksOfSecondSemester" RUN_TARGET_NAME="WorksOfSecondSemester">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -153,6 +141,7 @@
       <workItem from="1710697079776" duration="196000" />
       <workItem from="1710699986892" duration="571000" />
       <workItem from="1710700608679" duration="2371000" />
+      <workItem from="1710703436989" duration="1828000" />
     </task>
     <servers />
   </component>
