@@ -2,6 +2,7 @@
 #define VECTOR_LIBRARY_H
 
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef struct vector {
     int *data; // указатель на элементы вектора
@@ -23,5 +24,20 @@ void clear(vector *v);
 
 //Освобождает память, выделенную вектору по адресу v
 void deleteVector(vector *v);
+
+//Возвращает 1, если в векторе по адресу v хранятся какие-либо элементы, и 0 в противном случае
+bool isEmpty(vector *v);
+
+//Возвращает 1, если вектор по адресу v хранит количество элементов, совпадающее с его вместимостью, и 0 в противном случае
+bool isFull(vector *v);
+
+//возвращает i-ый элемент вектора v.
+int getVectorValue(vector *v, size_t i);
+
+//добавляет элемент x в конец вектора v
+void pushBack(vector *v, int x);
+
+//удаляет последний элемент из вектора v
+void popBack(vector *v);
 
 #endif

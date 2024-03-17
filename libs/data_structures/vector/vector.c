@@ -39,4 +39,35 @@ void deleteVector(vector *v) {
     v->capacity = 0;
 }
 
+bool isEmpty(vector *v) {
+    return v->size == 0;
+}
 
+bool isFull(vector *v) {
+    return v->size == v->capacity;
+}
+
+int getVectorValue(vector *v, size_t i) {
+    if (i < v->size) {
+        return v->data[i];
+    } else {
+        fprintf(stderr, "vector index out of range :D");
+        exit(1);
+    }
+}
+
+void pushBack(vector *v, int x) {
+    if (v->size >= v->capacity) {
+        size_t new_capacity = (v->capacity == 0) ? 1 : v->capacity*2;
+        reserve(v, new_capacity);
+    }
+    append_(v->data, &(v->size), x);
+}
+
+void popBack(vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "vector is empty, last element is missing");
+        exit(1);
+    }
+    deleteByPosSaveOrder_(v->data, &(v->size), v->size - 1);
+}
