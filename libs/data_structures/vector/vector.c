@@ -1,5 +1,6 @@
 #include "vector.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.c"
+#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
 #include <stdio.h>
 #include <malloc.h>
 
@@ -15,13 +16,12 @@ vector createVector(size_t n) {
 
 void reserve(vector *v, size_t newCapacity) {
     v->data = (int*) realloc(v->data, sizeof(int)*newCapacity);
-    if (v->data == NULL && newCapacity != 0)
-    {
+    if (v->data == NULL && newCapacity != 0) {
         fprintf(stderr, "bad alloc");
         exit(1);
     } else {
         v->capacity = newCapacity;
-        v->size = (v->size < newCapacity) ? v->size : newCapacity;
+        v->size = min2(v->size, newCapacity);
     }
 }
 
@@ -48,16 +48,16 @@ bool isFull(vector *v) {
 }
 
 int getVectorValue(vector *v, size_t i) {
-    if (i < v->size) {
-        return v->data[i];
-    } else {
-        fprintf(stderr, "vector index out of range :D");
+    if (i >= v->size) {
+        fprintf(stderr, "IndexError: a[%llu] is not exists", i);
         exit(1);
+    } else {
+        return v->data[i];
     }
 }
 
 void pushBack(vector *v, int x) {
-    if (v->size >= v->capacity) {
+    if (v->capacity <= v->size) {
         size_t new_capacity = (v->capacity == 0) ? 1 : v->capacity*2;
         reserve(v, new_capacity);
     }
@@ -66,23 +66,24 @@ void pushBack(vector *v, int x) {
 
 void popBack(vector *v) {
     if (v->size == 0) {
-        fprintf(stderr, "vector is empty, last element is missing");
+        fprintf(stderr, "IndexError: vector is empty, last element is missing");
         exit(1);
+    } else {
+        deleteByPosSaveOrder_(v->data, &(v->size), v->size - 1);
     }
-    deleteByPosSaveOrder_(v->data, &(v->size), v->size - 1);
 }
 
 int* atVector(vector *v, size_t index) {
-    if (index < v->size) {
-        return (v->data)+index;
-    } else {
+    if (index >= v->size) {
         fprintf(stderr, "IndexError: a[%llu] is not exists", index);
         exit(1);
+    } else {
+        return (v->data)+index;
     }
 }
 
 int* back(vector *v) {
-    return atVector(v, (v->size > 0) ? (v->size - 1) : 0);
+    return atVector(v, max2((int)(v->size)-1, 0));
 }
 
 int* front(vector *v) {

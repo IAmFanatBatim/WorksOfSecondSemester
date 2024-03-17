@@ -1,5 +1,6 @@
 #include "ordered_array_set.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.h"
+#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.h"
 
 ordered_array_set ordered_array_set_create (size_t capacity) {
    return (ordered_array_set) {

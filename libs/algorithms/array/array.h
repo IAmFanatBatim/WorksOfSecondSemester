@@ -3,8 +3,6 @@
 
 #include <stddef.h>
 
-//Функция-предикат для быстрой сортировки по возрастанию
-int compare_ints(const void* a, const void* b);
 //ввод массива data размера n
 void inputArray_(int *a , size_t n);
 //вывод массива data размера n

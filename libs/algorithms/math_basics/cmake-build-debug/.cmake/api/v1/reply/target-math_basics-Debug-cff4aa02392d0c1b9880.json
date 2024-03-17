@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libs/data_structures/libdata_structures.a"
+			"path" : "libmath_basics.a"
 		}
 	],
 	"backtrace" : 1,
@@ -15,7 +15,7 @@
 		],
 		"files" : 
 		[
-			"libs/data_structures/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 1,
+				"line" : 6,
 				"parent" : 0
 			}
 		]
@@ -54,13 +54,13 @@
 			]
 		}
 	],
-	"id" : "data_structures::@396ab3a44f37844d7cdb",
-	"name" : "data_structures",
-	"nameOnDisk" : "libdata_structures.a",
+	"id" : "math_basics::@6890427a1f51a3e7e1df",
+	"name" : "math_basics",
+	"nameOnDisk" : "libmath_basics.a",
 	"paths" : 
 	{
-		"build" : "libs/data_structures",
-		"source" : "libs/data_structures"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
@@ -77,7 +77,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/data_structures/bitset/bitset.c",
+			"path" : "math_basics.c",
 			"sourceGroupIndex" : 0
 		}
 	],

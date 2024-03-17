@@ -130,65 +130,6 @@ build libs/rebuild_cache: phony libs/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target data_structures
-
-
-#############################################
-# Order-only phony target for data_structures
-
-build cmake_object_order_depends_target_data_structures: phony || libs/data_structures/CMakeFiles/data_structures.dir
-
-build libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj: C_COMPILER__data_structures_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/bitset/bitset.c || cmake_object_order_depends_target_data_structures
-  DEP_FILE = libs\data_structures\CMakeFiles\data_structures.dir\bitset\bitset.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
-  OBJECT_FILE_DIR = libs\data_structures\CMakeFiles\data_structures.dir\bitset
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target data_structures
-
-
-#############################################
-# Link the static library libs\data_structures\libdata_structures.a
-
-build libs/data_structures/libdata_structures.a: C_STATIC_LIBRARY_LINKER__data_structures_Debug libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = libs\data_structures\libdata_structures.a
-  TARGET_PDB = data_structures.a.dbg
-
-
-#############################################
-# Utility command for edit_cache
-
-build libs/data_structures/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug\libs\data_structures" && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build libs/data_structures/edit_cache: phony libs/data_structures/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build libs/data_structures/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug\libs\data_structures" && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester" -B"C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug""
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build libs/data_structures/rebuild_cache: phony libs/data_structures/CMakeFiles/rebuild_cache.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
 # Object build statements for STATIC_LIBRARY target algorithms
 
 
@@ -197,17 +138,17 @@ build libs/data_structures/rebuild_cache: phony libs/data_structures/CMakeFiles/
 
 build cmake_object_order_depends_target_algorithms: phony || libs/algorithms/CMakeFiles/algorithms.dir
 
-build libs/algorithms/CMakeFiles/algorithms.dir/algorithms.c.obj: C_COMPILER__algorithms_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/algorithms/algorithms.c || cmake_object_order_depends_target_algorithms
-  DEP_FILE = libs\algorithms\CMakeFiles\algorithms.dir\algorithms.c.obj.d
-  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
-  OBJECT_FILE_DIR = libs\algorithms\CMakeFiles\algorithms.dir
-
 build libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj: C_COMPILER__algorithms_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/algorithms/array/array.c || cmake_object_order_depends_target_algorithms
   DEP_FILE = libs\algorithms\CMakeFiles\algorithms.dir\array\array.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
   OBJECT_FILE_DIR = libs\algorithms\CMakeFiles\algorithms.dir\array
+
+build libs/algorithms/CMakeFiles/algorithms.dir/math_basics/math_basics.c.obj: C_COMPILER__algorithms_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/algorithms/math_basics/math_basics.c || cmake_object_order_depends_target_algorithms
+  DEP_FILE = libs\algorithms\CMakeFiles\algorithms.dir\math_basics\math_basics.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
+  OBJECT_FILE_DIR = libs\algorithms\CMakeFiles\algorithms.dir\math_basics
 
 
 # =============================================================================
@@ -217,7 +158,7 @@ build libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj: C_COMPILER__a
 #############################################
 # Link the static library libs\algorithms\libalgorithms.a
 
-build libs/algorithms/libalgorithms.a: C_STATIC_LIBRARY_LINKER__algorithms_Debug libs/algorithms/CMakeFiles/algorithms.dir/algorithms.c.obj libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj
+build libs/algorithms/libalgorithms.a: C_STATIC_LIBRARY_LINKER__algorithms_Debug libs/algorithms/CMakeFiles/algorithms.dir/array/array.c.obj libs/algorithms/CMakeFiles/algorithms.dir/math_basics/math_basics.c.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = libs\algorithms\CMakeFiles\algorithms.dir
   POST_BUILD = cd .
@@ -249,6 +190,83 @@ build libs/algorithms/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build libs/algorithms/rebuild_cache: phony libs/algorithms/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target data_structures
+
+
+#############################################
+# Order-only phony target for data_structures
+
+build cmake_object_order_depends_target_data_structures: phony || libs/data_structures/CMakeFiles/data_structures.dir
+
+build libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj: C_COMPILER__data_structures_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/bitset/bitset.c || cmake_object_order_depends_target_data_structures
+  DEP_FILE = libs\data_structures\CMakeFiles\data_structures.dir\bitset\bitset.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
+  OBJECT_FILE_DIR = libs\data_structures\CMakeFiles\data_structures.dir\bitset
+
+build libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj: C_COMPILER__data_structures_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/unordered_array_set/unordered_array_set.c || cmake_object_order_depends_target_data_structures
+  DEP_FILE = libs\data_structures\CMakeFiles\data_structures.dir\unordered_array_set\unordered_array_set.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
+  OBJECT_FILE_DIR = libs\data_structures\CMakeFiles\data_structures.dir\unordered_array_set
+
+build libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj: C_COMPILER__data_structures_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/ordered_array_set/ordered_array_set.c || cmake_object_order_depends_target_data_structures
+  DEP_FILE = libs\data_structures\CMakeFiles\data_structures.dir\ordered_array_set\ordered_array_set.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
+  OBJECT_FILE_DIR = libs\data_structures\CMakeFiles\data_structures.dir\ordered_array_set
+
+build libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj: C_COMPILER__data_structures_unscanned_Debug C$:/Users/Анна/Desktop/сонины$ программы/second_semester/WorksOfSecondSemester/libs/data_structures/vector/vector.c || cmake_object_order_depends_target_data_structures
+  DEP_FILE = libs\data_structures\CMakeFiles\data_structures.dir\vector\vector.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
+  OBJECT_FILE_DIR = libs\data_structures\CMakeFiles\data_structures.dir\vector
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target data_structures
+
+
+#############################################
+# Link the static library libs\data_structures\libdata_structures.a
+
+build libs/data_structures/libdata_structures.a: C_STATIC_LIBRARY_LINKER__data_structures_Debug libs/data_structures/CMakeFiles/data_structures.dir/bitset/bitset.c.obj libs/data_structures/CMakeFiles/data_structures.dir/unordered_array_set/unordered_array_set.c.obj libs/data_structures/CMakeFiles/data_structures.dir/ordered_array_set/ordered_array_set.c.obj libs/data_structures/CMakeFiles/data_structures.dir/vector/vector.c.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = libs\data_structures\CMakeFiles\data_structures.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libs\data_structures\libdata_structures.a
+  TARGET_PDB = data_structures.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build libs/data_structures/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug\libs\data_structures" && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build libs/data_structures/edit_cache: phony libs/data_structures/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build libs/data_structures/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug\libs\data_structures" && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S"C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester" -B"C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\cmake-build-debug""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build libs/data_structures/rebuild_cache: phony libs/data_structures/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build WorksOfSecondSemester: phony WorksOfSecondSemester.exe
@@ -276,7 +294,7 @@ build all: phony WorksOfSecondSemester.exe libs/all
 #############################################
 # Folder: C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/cmake-build-debug/libs
 
-build libs/all: phony libs/data_structures/all libs/algorithms/all
+build libs/all: phony libs/algorithms/all libs/data_structures/all
 
 # =============================================================================
 

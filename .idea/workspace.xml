@@ -24,13 +24,26 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-3b32e2f6373b5c44bc6c.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-16T15-46-54-0980.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/.cmake/api/v1/reply/target-ordered_array_set-Debug-ce97ddf7240ab0b1f488.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c0b3818e4d20e57dbd38.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-dfa6c7da6b9c997427a4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-16T14-48-44-0804.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-WorksOfSecondSemester-Debug-5debebfbbc2072e47ea1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-algorithms-Debug-4356b345731339fe0a67.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-data_structures-Debug-30336b12064a0a81ba46.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/ordered_array_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/ordered_array_set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/vector/vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/vector/vector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/vector/vector_test.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +87,6 @@
   }
 }</component>
   <component name="RunManager" selected="C/C++ File.main.c">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WorksOfSecondSemester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorksOfSecondSemester" TARGET_NAME="WorksOfSecondSemester" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WorksOfSecondSemester" RUN_TARGET_NAME="WorksOfSecondSemester">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -100,12 +108,24 @@
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="vector_test.c" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorksOfSecondSemester" TARGET_NAME="vector_test.c" CONFIG_NAME="vector_test.c">
+      <option name="sourceFile" value="libs\data_structures\vector\vector_test.c" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="C/C++ File.main.c" />
+      <item itemvalue="C/C++ File.vector_test.c" />
       <item itemvalue="CMake Application.WorksOfSecondSemester" />
       <item itemvalue="CMake Application.algorithms" />
       <item itemvalue="CMake Application.data_structures" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="C/C++ File.vector_test.c" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -126,6 +146,17 @@
       <workItem from="1710604736188" duration="662000" />
       <workItem from="1710605863338" duration="2729000" />
       <workItem from="1710611350085" duration="617000" />
+      <workItem from="1710685893899" duration="51000" />
+      <workItem from="1710685948189" duration="12000" />
+      <workItem from="1710685963356" duration="24000" />
+      <workItem from="1710685990414" duration="13000" />
+      <workItem from="1710686007950" duration="2000" />
+      <workItem from="1710686018282" duration="179000" />
+      <workItem from="1710686200973" duration="5000" />
+      <workItem from="1710686207851" duration="3000" />
+      <workItem from="1710686213334" duration="4000" />
+      <workItem from="1710686730582" duration="4487000" />
+      <workItem from="1710697079776" duration="196000" />
     </task>
     <servers />
   </component>
