@@ -1,5 +1,6 @@
 #ifndef INC_MATH_BASICS_H
 #define INC_MATH_BASICS_H
+#include <stdbool.h>
 
 //Функция-предикат для быстрой сортировки по возрастанию
 int compare_ints(const void* a, const void* b);
@@ -16,4 +17,6 @@ int min3(const int x, const int y, const int z);
 //возвращает максимальное из трех целых чисел x, y и z
 int max3(const int x, const int y, const int z);
 
+//возвращает 1, если вещественные числа x и y различаются незначительно и могут считаться равными, и 0 в противном случае
+bool are_double_equal(double x, double y);
 #endif

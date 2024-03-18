@@ -78,7 +78,7 @@ void test_isEmpty_notEmptyVector() {
     pushBack(&v, 1);
     pushBack(&v, 2);
     assert(v.size == 2);
-    assert(!isFull(&v));
+    assert(!isEmpty(&v));
 }
 
 void test_atVector_notEmptyVector() {
@@ -125,13 +125,120 @@ void test_front_oneElementInVector() {
     assert(*front(&v) == 1);
 }
 
-void test_back_emptyVector() {
-    vector v = createVector(0);
-    back(&v);
+void test_shrinkToFit_halfFullVector() {
+    vector v = createVector(4);
+    pushBack(&v, 2);
+    pushBack(&v, 3);
+    assert(v.size == 2);
+
+    shrinkToFit(&v);
+    assert(v.capacity == 2);
 }
 
+void test_pushBackV_emptyVector() {
+    vectorVoid v = createVectorV(0, sizeof(double));
+    double x_src = 1.2;
+    pushBackV(&v, &x_src);
+
+    double x_dst;
+    getVectorValueV(&v, 0, &x_dst);
+
+    assert(are_double_equal(x_dst, 1.2));
+    assert(v.size == 1);
+    assert(v.capacity == 1);
+}
+
+void test_pushBackV_halfFullVector() {
+    vectorVoid v = createVectorV(3, sizeof(double));
+    double elements[2] = {1.2, 3};
+    size_t len = 2;
+    for (size_t i = 0; i < len; i++) {
+        pushBackV(&v, &elements[i]);
+    }
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+
+    double x_dst;
+    getVectorValueV(&v, v.size - 1, &x_dst);
+
+    assert(are_double_equal(x_dst, 6.66));
+    assert(v.size == 3);
+    assert(v.capacity == 3);
+}
+
+void test_pushBackV_fullVector() {
+    vectorVoid v = createVectorV(2, sizeof(double));
+    double elements[2] = {1.2, 3};
+    size_t len = 2;
+    for (size_t i = 0; i < len; i++) {
+        pushBackV(&v, &elements[i]);
+    }
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+
+    double x_dst;
+    getVectorValueV(&v, v.size - 1, &x_dst);
+
+    assert(are_double_equal(x_dst, 6.66));
+    assert(v.size == 3);
+    assert(v.capacity == 4);
+}
+
+void test_popBackV_notEmptyVector() {
+    vectorVoid v = createVectorV(0, sizeof(double));
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+    assert(v.size == 1);
+
+    popBackV(&v);
+    assert(v.size == 0);
+    assert(v.capacity == 1);
+}
+
+void test_isFullV_fullVector() {
+    vectorVoid v = createVectorV(1, sizeof(double));
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+    assert(v.size == 1);
+    assert(isFullV(&v));
+}
+
+void test_isFullV_notFullVector() {
+    vectorVoid v = createVectorV(2, sizeof(double));
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+    assert(v.size == 1);
+    assert(!isFullV(&v));
+}
+
+void test_isEmptyV_emptyVector() {
+    vectorVoid v = createVectorV(1, sizeof(double));
+    assert(v.size == 0);
+    assert(isEmptyV(&v));
+}
+
+void test_isEmptyV_notEmptyVector() {
+    vectorVoid v = createVectorV(2, sizeof(double));
+    double x_src = 6.66;
+    pushBackV(&v, &x_src);
+    assert(v.size == 1);
+    assert(!isEmptyV(&v));
+}
+
+void test_shrinkToFitV_halfFullVector() {
+    vectorVoid v = createVectorV(4, sizeof(double));
+    double elements[2] = {1.2, 3};
+    size_t len = 2;
+    for (size_t i = 0; i < len; i++) {
+        pushBackV(&v, &elements[i]);
+    }
+    assert(v.size == 2);
+    shrinkToFitV(&v);
+    assert(v.capacity == 2);
+}
 
 void test() {
+    //Тестирование целочисленного вектора, vector
     test_pushBack_emptyVector();
     test_pushBack_halfFullVector();
     test_pushBack_fullVector();
@@ -147,23 +254,21 @@ void test() {
     test_back_oneElementInVector();
     test_front_notEmptyVector();
     test_front_oneElementInVector();
+    test_shrinkToFit_halfFullVector();
+
+    //Тестирование вектора произвольного типа, vectorVoid
+    test_pushBackV_emptyVector();
+    test_pushBackV_halfFullVector();
+    test_pushBackV_fullVector();
+    test_popBackV_notEmptyVector();
+    test_isFullV_fullVector();
+    test_isFullV_notFullVector();
+    test_isEmptyV_emptyVector();
+    test_isEmptyV_notEmptyVector();
+    test_shrinkToFitV_halfFullVector();
 }
 
 int main() {
     test();
-
-    size_t n;
-    scanf("%zd", &n);
-    vectorVoid v = createVectorV(0, sizeof(float));
-    for (int i = 0; i < n; i++) {
-        float x;
-        scanf("%f", &x);
-        pushBackV(&v, &x);
-    }
-    for (int i = 0; i < n; i++) {
-        float x;
-        getVectorValueV(&v, i, &x);
-        printf("%.2f ", x);
-    }
     return 0;
 }
