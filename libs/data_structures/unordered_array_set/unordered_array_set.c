@@ -1,3 +1,6 @@
+#ifndef INC_UNORDERED_ARRAY_SET_C
+#define INC_UNORDERED_ARRAY_SET_C
+
 #include "unordered_array_set.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.h"
 
@@ -126,3 +129,5 @@ void unordered_array_set_delete (unordered_array_set *set) {
     set->size = 0;
     set->capacity = 0;
 }
+
+#endif

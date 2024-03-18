@@ -1,3 +1,6 @@
+#ifndef INC_ORDERED_ARRAY_SET_C
+#define INC_ORDERED_ARRAY_SET_C
+
 #include "ordered_array_set.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.h"
@@ -185,3 +188,4 @@ void ordered_array_set_delete (ordered_array_set *set) {
     set->capacity = 0;
 }
 
+#endif

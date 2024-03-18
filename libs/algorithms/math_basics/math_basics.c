@@ -1,3 +1,5 @@
+#ifndef INC_MATH_BASICS_C
+#define INC_MATH_BASICS_C
 #include "math_basics.h"
 
 int compare_ints(const void* a, const void* b) {
@@ -23,3 +25,5 @@ int min3(const int x, const int y, const int z) {
 int max3(const int x, const int y, const int z) {
     return max2(max2(x, y), z);
 }
+
+#endif

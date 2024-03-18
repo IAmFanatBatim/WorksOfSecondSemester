@@ -1,3 +1,6 @@
+#ifndef INC_VECTOR_C
+#define INC_VECTOR_C
+
 #include "vector.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.c"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
@@ -89,3 +92,5 @@ int* back(vector *v) {
 int* front(vector *v) {
     return atVector(v,0);
 }
+
+#endif

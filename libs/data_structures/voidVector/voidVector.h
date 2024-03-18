@@ -1,5 +1,5 @@
-#ifndef VOIDVECTOR_LIBRARY_H
-#define VOIDVECTOR_LIBRARY_H
+#ifndef INC_VOIDVECTOR_H
+#define INC_VOIDVECTOR_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -28,5 +28,22 @@ void shrinkToFitV(vectorVoid *v);
 //Освобождает память, выделенную произвольному вектору по адресу v
 void deleteVectorV(vectorVoid *v);
 
+//Возвращает 1, если в произвольном векторе по адресу v хранятся какие-либо элементы, и 0 в противном случае
+bool isEmptyV(vectorVoid *v);
+
+//Возвращает 1, если произвольный вектор по адресу v хранит количество элементов, совпадающее с его вместимостью, и 0 в противном случае
+bool isFullV(vectorVoid *v);
+
+//записывает по адресу destination index-ый элемент произвольного вектора v
+void getVectorValueV(vectorVoid *v, size_t index, void *destination);
+
+//записывает на index-ый элемент произвольного вектора v значение, расположенное по адресу source
+void setVectorValueV(vectorVoid *v, size_t index, void *source);
+
+//удаляет последний элемент из произвольного вектора v
+void popBackV(vectorVoid *v);
+
+//добавляет элемент x в конец произвольного вектора v
+void pushBackV(vectorVoid *v, void *source);
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef VECTOR_LIBRARY_H
-#define VECTOR_LIBRARY_H
+#ifndef INC_VECTOR_H
+#define INC_VECTOR_H
 
 #include <stdint.h>
 #include <stdbool.h>

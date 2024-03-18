@@ -1,6 +1,6 @@
 #include <assert.h>
 #include "libs\data_structures\vector\vector.c"
-#include "libs\data_structures\voidVector\voidVector.h"
+#include "libs\data_structures\voidVector\voidVector.c"
 void test_pushBack_emptyVector() {
     vector v = createVector(0);
     pushBack(&v, 1);
@@ -151,11 +151,19 @@ void test() {
 
 int main() {
     test();
-    vectorVoid v = {
-            malloc(4*sizeof(char)),
-            2,
-            4,
-            sizeof(char)
-    };
+
+    size_t n;
+    scanf("%zd", &n);
+    vectorVoid v = createVectorV(0, sizeof(float));
+    for (int i = 0; i < n; i++) {
+        float x;
+        scanf("%f", &x);
+        pushBackV(&v, &x);
+    }
+    for (int i = 0; i < n; i++) {
+        float x;
+        getVectorValueV(&v, i, &x);
+        printf("%.2f ", x);
+    }
     return 0;
 }

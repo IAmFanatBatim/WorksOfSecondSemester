@@ -1,3 +1,6 @@
+#ifndef INC_BITSET_C
+#define INC_BITSET_C
+
 #include "bitset.h"
 #include <stdio.h>
 #include <assert.h>
@@ -81,3 +84,5 @@ void bitset_print (bitset set) {
         printf("\b\b}\n");
     }
 }
+
+#endif

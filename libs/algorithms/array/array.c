@@ -1,3 +1,6 @@
+#ifndef INC_ARRAY_C
+#define INC_ARRAY_C
+
 #include <stdio.h>
 #include <limits.h>
 #include <assert.h>
@@ -122,3 +125,4 @@ size_t binarySearchMoreOrEqual_ ( const int *a, size_t n, int x ) {
     return right;
 }
 
+#endif
