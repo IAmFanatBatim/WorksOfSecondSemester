@@ -3,4 +3,4 @@ project(vector C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(voidVector voidVector.c)
+add_library(vectorVoid vectorVoid.c)

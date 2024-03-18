@@ -1,7 +1,7 @@
-#ifndef INC_VOIDVECTOR_C
-#define INC_VOIDVECTOR_C
+#ifndef INC_VECTORVOID_C
+#define INC_VECTORVOID_C
 
-#include "voidVector.h"
+#include "vectorVoid.h"
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
 #include <malloc.h>
 #include <memory.h>

@@ -24,11 +24,52 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/algorithms/math_basics/math_basics.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/math_basics/math_basics.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/algorithms/math_basics/math_basics.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/math_basics/math_basics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-937e60a9c004b6ed90cb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-17T18-26-52-0013.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-data_structures-Debug-0b7515cb781acb5ab70b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/.idea/vector.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/cache-v2-419a1502c63fe78f013b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-bbc68375987aa4d8e299.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-e699326166216215fe18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-17T18-19-21-0694.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/target-voidVector-Debug-d4317561e6ab64356a04.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-1a91e91f1c114e4c2010.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/cmake-build-debug/libvector.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/voidVector/voidVector.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +189,9 @@
       <workItem from="1710741186968" duration="1635000" />
       <workItem from="1710742945618" duration="10471000" />
       <workItem from="1710775087555" duration="5130000" />
+      <workItem from="1710786411989" duration="96000" />
+      <workItem from="1710786552870" duration="758000" />
+      <workItem from="1710788217498" duration="20000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 #include <assert.h>
 #include "libs\data_structures\vector\vector.c"
-#include "libs\data_structures\voidVector\voidVector.c"
+#include "libs\data_structures\vectorVoid\vectorVoid.c"
 void test_pushBack_emptyVector() {
     vector v = createVector(0);
     pushBack(&v, 1);

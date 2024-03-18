@@ -1,5 +1,5 @@
-#ifndef INC_VOIDVECTOR_H
-#define INC_VOIDVECTOR_H
+#ifndef INC_VECTORVOID_H
+#define INC_VECTORVOID_H
 
 #include <stdint.h>
 #include <stdbool.h>
