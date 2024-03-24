@@ -24,4 +24,16 @@ void freeMemMatrix(matrix *m);
 //освобождает память, выделенную под хранение массива ms из nMatrices матриц
 void freeMemMatrices(matrix *ms, int nMatrices);
 
+//осуществляет ввод матрицы и записывает данные по адресу m
+void inputMatrix(matrix *m);
+
+//осуществляет ввод массива из nMatrices матриц, хранящегося по адресу ms
+void inputMatrices(matrix *ms, int nMatrices);
+
+// выводит на экран матрицу m
+void outputMatrix(matrix m);
+
+// выводит на экран массив из nMatrices матриц, хранящийся по адресу ms
+void outputMatrices(matrix *ms, int nMatrices);
+
 #endif

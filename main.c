@@ -1,6 +1,7 @@
 #include <assert.h>
 #include "libs\data_structures\vector\vector.c"
 #include "libs\data_structures\vectorVoid\vectorVoid.c"
+#include "libs\data_structures\matrix\matrix.c"
 void test_pushBack_emptyVector() {
     vector v = createVector(0);
     pushBack(&v, 1);
@@ -269,6 +270,12 @@ void test() {
 }
 
 int main() {
-    test();
+    //test();
+    matrix *mats = getMemArrayOfMatrices(3, 2, 2);
+    inputMatrices(mats, 3);
+    outputMatrices(mats, 3);
+
+    freeMemMatrix(&mats[1]);
+    printf("%p", mats[1].values);
     return 0;
 }
