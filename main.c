@@ -238,7 +238,7 @@ void test_shrinkToFitV_halfFullVector() {
     assert(v.capacity == 2);
 }
 
-void test() {
+void test_vectors() {
     //Тестирование целочисленного вектора, vector
     test_pushBack_emptyVector();
     test_pushBack_halfFullVector();
@@ -269,33 +269,363 @@ void test() {
     test_shrinkToFitV_halfFullVector();
 }
 
-int main() {
-    //test();
-    /*matrix *mats = getMemArrayOfMatrices(3, 2, 2);
-    inputMatrices(mats, 3);
-    outputMatrices(mats, 3);
+void test_swapRows() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                1, 2, 3,
+                4, 5, 6,
+                7, 8, 9,
 
-    freeMemMatrix(&mats[1]);
-    printf("%p", mats[1].values);*/
-    matrix mat = getMemMatrix(2, 3);
-    //matrix mot = getMemMatrix(3, 2);
-    inputMatrix(&mat);
-    //inputMatrix(&mot);
-    /*swapRows(&mat, 1, 2);
-    outputMatrix(mat);
-    swapColumns(&mat, 1, 2);
-    outputMatrix(mat);*/
-    //insertionSortRowsMatrixByRowCriteria(&mat, getSum);
-    //outputMatrix(mat);
-    //selectionSortColsMatrixByColCriteria(&mat, getSum);
-    //printf("%d %d %d", isSquareMatrix(&mat), isEMatrix(&mat), isSymmetricMatrix(&mat));
-    //printf("%d\n", areTwoMatricesEqual(&mat, &mot));
-    //transposeMatrix(&mat);
-    outputPosition(getMinValuePos(mat));
-    printf("\n");
-    outputPosition(getMaxValuePos(mat));
-    printf("\n");
-    outputMatrix(mat);
-    //outputMatrix(mot);
+                1, 3, 5,
+                6,7, 8,
+                2, 0, 3
+                },
+            2, 3, 3
+    );
+    matrix *result_mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    7, 8, 9,
+                    4, 5, 6,
+                    1, 2, 3,
+
+                    1, 3, 5,
+                    2, 0, 3,
+                    6, 7, 8
+            },
+            2, 3, 3
+    );
+    swapRows(&mats[0], 0, 2);
+    swapRows(&mats[1], 1, 2);
+
+    assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
+    assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));
+
+    freeMemMatrices(mats, 2);
+    freeMemMatrices(result_mats, 2);
+}
+
+void test_swapColumns() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 3, 5,
+                    6,7, 8,
+                    2, 0, 3
+            },
+            2, 3, 3
+    );
+    matrix *result_mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    3, 2, 1,
+                    6, 5, 4,
+                    9, 8, 7,
+
+                    1, 5, 3,
+                    6,8, 7,
+                    2, 3, 0
+            },
+            2, 3, 3
+    );
+    swapColumns(&mats[0], 0, 2);
+    swapColumns(&mats[1], 1, 2);
+
+    assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
+    assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));
+
+    freeMemMatrices(mats, 2);
+    freeMemMatrices(result_mats, 2);
+}
+
+void test_insertionSortRowsMatrixByRowCriteria() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 3, 5,
+                    6,7, 8,
+                    2, 0, 3
+            },
+            2, 3, 3
+    );
+    matrix *result_mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    2, 0, 3,
+                    1, 3, 5,
+                    6, 7, 8
+            },
+            2, 3, 3
+    );
+    insertionSortRowsMatrixByRowCriteria(&mats[0], getSum);
+    insertionSortRowsMatrixByRowCriteria(&mats[1], getSum);
+
+    assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
+    assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));
+
+    freeMemMatrices(mats, 2);
+    freeMemMatrices(result_mats, 2);
+}
+
+void test_selectionSortColsMatrixByColCriteria() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    5, 1, 5,
+                    4, 8, 9,
+                    9, 0, 1
+            },
+            2, 3, 3
+    );
+    matrix *result_mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 5, 5,
+                    8, 9, 4,
+                    0, 1, 9
+            },
+            2, 3, 3
+    );
+    selectionSortColsMatrixByColCriteria(&mats[0], getSum);
+    selectionSortColsMatrixByColCriteria(&mats[1], getSum);
+
+    assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
+    assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));
+
+    freeMemMatrices(mats, 2);
+    freeMemMatrices(result_mats, 2);
+}
+
+void test_isSquareMatrix() {
+    matrix mat1 = createMatrixFromArray(
+            (int []) {
+                1, 2, 3,
+                4, 5, 6,
+                7, 8, 9
+        }, 3, 3
+    );
+    matrix mat2 = createMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6
+            }, 2, 3
+    );
+    assert(isSquareMatrix(&mat1));
+    assert(!isSquareMatrix(&mat2));
+
+    freeMemMatrix(&mat1);
+    freeMemMatrix(&mat2);
+}
+
+void test_isEMatrix() {
+    matrix mat1 = createMatrixFromArray(
+            (int []) {
+                    1, 0, 0,
+                    0, 1, 0,
+                    0, 0, 1
+            }, 3, 3
+    );
+    matrix mat2 = createMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    2, 1, 0,
+                    4, 0, 1
+            }, 3, 3
+    );
+    matrix mat3 = createMatrixFromArray(
+            (int []) {
+                    1, 0, 0,
+                    0, 1, 0
+            }, 2, 3
+    );
+    assert(isEMatrix(&mat1));
+    assert(!isEMatrix(&mat2));
+    assert(!isEMatrix(&mat3));
+
+    freeMemMatrix(&mat1);
+    freeMemMatrix(&mat2);
+    freeMemMatrix(&mat3);
+}
+
+void test_isSymmetricMatrix() {
+    matrix mat1 = createMatrixFromArray(
+            (int []) {
+                    1, 3, 5,
+                    3, 1, 0,
+                    5, 0, 1
+            }, 3, 3
+    );
+    matrix mat2 = createMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    2, 1, 0,
+                    4, 0, 1
+            }, 3, 3
+    );
+    matrix mat3 = createMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    2, 1, 4
+            }, 2, 3
+    );
+    assert(isSymmetricMatrix(&mat1));
+    assert(!isSymmetricMatrix(&mat2));
+    assert(!isSymmetricMatrix(&mat3));
+
+    freeMemMatrix(&mat1);
+    freeMemMatrix(&mat2);
+    freeMemMatrix(&mat3);
+}
+
+void test_transposeSquareMatrix() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 2, 3,
+                    2, 8, 9,
+                    3, 9, 1
+            },
+            2, 3, 3
+    );
+    matrix *result_mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 4, 7,
+                    2, 5, 8,
+                    3, 6, 9,
+
+                    1, 2, 3,
+                    2, 8, 9,
+                    3, 9, 1
+            },
+            2, 3, 3
+    );
+    transposeSquareMatrix(&mats[0]);
+    transposeSquareMatrix(&mats[1]);
+    assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
+    assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));
+
+    freeMemMatrices(mats, 2);
+    freeMemMatrices(result_mats, 2);
+}
+
+void test_transposeMatrix() {
+    matrix mat1 = createMatrixFromArray(
+            (int []) {
+                    1, 2,
+                    3, 4,
+                    5, 6,
+            }, 3, 2
+    );
+    matrix mat2 = createMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6
+            }, 2, 3
+    );
+
+    matrix mat1_transpose = createMatrixFromArray(
+            (int []) {
+                    1, 3, 5,
+                    2, 4 ,6
+            }, 2, 3
+    );
+    matrix mat2_transpose = createMatrixFromArray(
+            (int []) {
+                   1, 4,
+                   2, 5,
+                   3, 6
+            }, 3, 2
+    );
+    transposeMatrix(&mat1);
+    transposeMatrix(&mat2);
+
+    assert(areTwoMatricesEqual(&mat1, &mat1_transpose));
+    assert(areTwoMatricesEqual(&mat2, &mat2_transpose));
+
+    freeMemMatrix(&mat1);
+    freeMemMatrix(&mat2);
+    freeMemMatrix(&mat1_transpose);
+    freeMemMatrix(&mat2_transpose);
+}
+
+void test_getMinValuePos() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 3, 5,
+                    6,7, 8,
+                    2, 0, 3
+            },
+            2, 3, 3
+    );
+
+    assert(getMinValuePos(mats[0]).rowIndex == 0);
+    assert(getMinValuePos(mats[0]).colIndex == 0);
+
+    assert(getMinValuePos(mats[1]).rowIndex == 2);
+    assert(getMinValuePos(mats[1]).colIndex == 1);
+
+    freeMemMatrices(mats, 2);
+}
+
+void test_getMaxValuePos() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int []) {
+                    1, 2, 3,
+                    4, 5, 6,
+                    7, 8, 9,
+
+                    1, 3, 5,
+                    6,7, 8,
+                    2, 0, 3
+            },
+            2, 3, 3
+    );
+
+    assert(getMaxValuePos(mats[0]).rowIndex == 2);
+    assert(getMaxValuePos(mats[0]).colIndex == 2);
+
+    assert(getMaxValuePos(mats[1]).rowIndex == 1);
+    assert(getMaxValuePos(mats[1]).colIndex == 2);
+
+    freeMemMatrices(mats, 2);
+}
+
+void test_matrix () {
+    test_swapRows();
+    test_swapColumns();
+    test_insertionSortRowsMatrixByRowCriteria();
+    test_selectionSortColsMatrixByColCriteria();
+    test_isSquareMatrix();
+    test_isEMatrix();
+    test_isSymmetricMatrix();
+    test_transposeSquareMatrix();
+    test_transposeMatrix();
+    test_getMinValuePos();
+    test_getMaxValuePos();
+}
+
+int main() {
+    test_vectors();
+    test_matrix();
     return 0;
 }
