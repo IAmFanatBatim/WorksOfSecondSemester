@@ -3,8 +3,43 @@
 
 #include <stdio.h>
 #include <limits.h>
+#include <memory.h>
+#include <malloc.h>
 #include <assert.h>
 #include "array.h"
+#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
+
+
+void swapVoid (void *a, void *b, int type_size) {
+    void *temp = malloc(type_size);
+    memcpy(temp, a, type_size);
+    memcpy(a, b, type_size);
+    memcpy(b, temp, type_size);
+}
+
+int getSum(int *a, int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+    return sum;
+}
+
+int getMax(int *a, int n) {
+    int max = a[0];
+    for (int i = 1; i < n; i++) {
+        max += max2(a[i], max);
+    }
+    return max;
+}
+
+int getMin(int *a, int n) {
+    int min = a[0];
+    for (int i = 1; i < n; i++) {
+        min += max2(a[i], min);
+    }
+    return min;
+}
 
 void inputArray_(int *const a, const size_t n) {
     for (size_t i = 0; i < n; i++)

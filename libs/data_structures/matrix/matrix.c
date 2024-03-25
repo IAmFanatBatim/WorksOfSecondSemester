@@ -1,11 +1,15 @@
 #include "matrix.h"
 #include <malloc.h>
 #include <stdio.h>
+#include <assert.h>
+#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.c"
+
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int*) * nRows);
-    for (int i = 0; i < nRows; i++)
+    for (int i = 0; i < nRows; i++) {
         values[i] = (int *) malloc(sizeof(int) * nCols);
+    }
     return (matrix){values, nRows, nCols};
 }
 
@@ -34,7 +38,6 @@ void freeMemMatrices(matrix *ms, int nMatrices) {
     ms = NULL;
 }
 
-//осуществляет ввод матрицы и записывает данные по адресу m
 void inputMatrix(matrix *m) {
     for (int i = 0; i < m->nRows; i++) {
         for (int j = 0; j < m->nCols; j++) {
@@ -43,14 +46,12 @@ void inputMatrix(matrix *m) {
     }
 }
 
-//осуществляет ввод массива из nMatrices матриц, хранящегося по адресу ms
 void inputMatrices(matrix *ms, int nMatrices) {
     for (int i = 0; i < nMatrices; i++) {
         inputMatrix(ms + i);
     }
 }
 
-// выводит на экран матрицу m
 void outputMatrix(matrix m) {
     if (m.nRows != 0 && m.nCols != 0) {
         for (int i = 0; i < m.nRows; i++) {
@@ -63,10 +64,60 @@ void outputMatrix(matrix m) {
     }
 }
 
-// выводит на экран массив из nMatrices матриц, хранящийся по адресу ms
 void outputMatrices(matrix *ms, int nMatrices) {
     for (int i = 0; i < nMatrices; i++) {
         outputMatrix(ms[i]);
         printf("\n");
+    }
+}
+
+void swapRows(matrix *m, int i1, int i2) {
+    assert(i1 < m->nRows && i2 < m->nRows);
+    swapVoid(&m->values[i1], &m->values[i2], sizeof(int*));
+}
+
+void swapColumns(matrix *m, int j1, int j2) {
+    assert(j1 < m->nCols && j2 < m->nCols);
+    for (int i = 0; i < m->nRows; i++) {
+        swapVoid(&m->values[i][j1], &m->values[i][j2], sizeof(int));
+    }
+}
+
+void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int)) {
+    int criteria_value[m->nRows];
+    for (int i = 0; i < m->nRows; i++) {
+        criteria_value[i] = criteria(m->values[i], m->nCols);
+    }
+    for (int start_index = 1; start_index < m->nCols; start_index++) {
+        int cur_value = criteria_value[start_index];
+        int *cur_row_pointer = m->values[start_index];
+        int cur_index = start_index;
+        while (cur_index> 0 && criteria_value[cur_index - 1] > cur_value) {
+            criteria_value[cur_index] = criteria_value[cur_index - 1];
+            m->values[cur_index] = m->values[cur_index - 1];
+            cur_index--;
+        }
+        criteria_value[cur_index] = cur_value;
+        m->values[cur_index] = cur_row_pointer;
+        //swapRows(m, start_index, cur_index);
+    }
+}
+
+void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int)) {
+    int criteria_value[m->nCols];
+    for (int i = 0; i < m->nCols; i++) {
+        int col_elements[m->nRows];
+        for (int j = 0; j < m->nRows; j++) {
+            col_elements[j] = m->values[j][i];
+        }
+        criteria_value[i] = criteria(col_elements, m->nRows);
+    }
+    for (int start_index = 0; start_index < m->nRows-1; start_index++) {
+        int minPos = start_index;
+        for (int cur_index = start_index + 1; cur_index < m->nRows; cur_index++)
+            if (criteria_value[cur_index] < criteria_value[minPos])
+                minPos = cur_index;
+        swapVoid(&criteria_value[start_index], &criteria_value[minPos], sizeof(int));
+        swapColumns(m, start_index, minPos);
     }
 }

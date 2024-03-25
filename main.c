@@ -271,11 +271,21 @@ void test() {
 
 int main() {
     //test();
-    matrix *mats = getMemArrayOfMatrices(3, 2, 2);
+    /*matrix *mats = getMemArrayOfMatrices(3, 2, 2);
     inputMatrices(mats, 3);
     outputMatrices(mats, 3);
 
     freeMemMatrix(&mats[1]);
-    printf("%p", mats[1].values);
+    printf("%p", mats[1].values);*/
+    matrix mat = getMemMatrix(3, 3);
+    inputMatrix(&mat);
+    /*swapRows(&mat, 1, 2);
+    outputMatrix(mat);
+    swapColumns(&mat, 1, 2);
+    outputMatrix(mat);*/
+    //insertionSortRowsMatrixByRowCriteria(&mat, getSum);
+    //outputMatrix(mat);
+    selectionSortColsMatrixByColCriteria(&mat, getSum);
+    outputMatrix(mat);
     return 0;
 }

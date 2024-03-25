@@ -24,6 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
@@ -158,6 +160,9 @@
       <workItem from="1710953626306" duration="1195000" />
       <workItem from="1711108530193" duration="5269000" />
       <workItem from="1711301525937" duration="759000" />
+      <workItem from="1711303494991" duration="5888000" />
+      <workItem from="1711347075312" duration="30000" />
+      <workItem from="1711347268706" duration="4111000" />
     </task>
     <servers />
   </component>
