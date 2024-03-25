@@ -177,3 +177,37 @@ void transposeMatrix(matrix *m) {
     }
     *m = m_transposed;
 }
+
+void outputPosition(position pos) {
+    printf("(%d, %d)", pos.rowIndex, pos.colIndex);
+}
+
+position getMinValuePos(matrix m) {
+    int min_element = m.values[0][0];
+    position min_position = (position) {0, 0};
+    for (int row_index = 0; row_index < m.nRows; row_index++) {
+        for (int col_index = 0; col_index < m.nCols; col_index++) {
+            if (m.values[row_index][col_index] < min_element) {
+                min_element = m.values[row_index][col_index];
+                min_position.rowIndex = row_index;
+                min_position.colIndex = col_index;
+            }
+        }
+    }
+    return min_position;
+}
+
+position getMaxValuePos(matrix m) {
+    int max_element = m.values[0][0];
+    position max_position = (position) {0, 0};
+    for (int row_index = 0; row_index < m.nRows; row_index++) {
+        for (int col_index = 0; col_index < m.nCols; col_index++) {
+            if (m.values[row_index][col_index] > max_element) {
+                max_element = m.values[row_index][col_index];
+                max_position.rowIndex = row_index;
+                max_position.colIndex = col_index;
+            }
+        }
+    }
+    return max_position;
+}

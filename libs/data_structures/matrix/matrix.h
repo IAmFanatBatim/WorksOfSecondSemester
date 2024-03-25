@@ -68,4 +68,13 @@ void transposeSquareMatrix(matrix *m);
 //транспонирует произвольную матрицу m
 void transposeMatrix(matrix *m);
 
+//выводит на экран позицию pos
+void outputPosition(position pos);
+
+//возвращает позицию минимального элемента матрицы m
+position getMinValuePos(matrix m);
+
+//возвращает позицию максимального элемента матрицы m
+position getMaxValuePos(matrix m);
+
 #endif

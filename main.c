@@ -290,7 +290,11 @@ int main() {
     //selectionSortColsMatrixByColCriteria(&mat, getSum);
     //printf("%d %d %d", isSquareMatrix(&mat), isEMatrix(&mat), isSymmetricMatrix(&mat));
     //printf("%d\n", areTwoMatricesEqual(&mat, &mot));
-    transposeMatrix(&mat);
+    //transposeMatrix(&mat);
+    outputPosition(getMinValuePos(mat));
+    printf("\n");
+    outputPosition(getMaxValuePos(mat));
+    printf("\n");
     outputMatrix(mat);
     //outputMatrix(mot);
     return 0;
