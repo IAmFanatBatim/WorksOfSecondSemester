@@ -159,3 +159,21 @@ bool isSymmetricMatrix(matrix *m) {
     }
     return result;
 }
+
+void transposeSquareMatrix(matrix *m) {
+    for (int row_index = 0; row_index < m->nRows; row_index++) {
+        for (int col_index = 0; col_index < row_index; col_index++) {
+            swapVoid(&m->values[row_index][col_index], &m->values[col_index][row_index], sizeof(int));
+        }
+    }
+}
+
+void transposeMatrix(matrix *m) {
+    matrix m_transposed = getMemMatrix(m->nCols, m->nRows);
+    for (int row_index = 0; row_index < m->nRows; row_index++) {
+        for (int col_index = 0; col_index < m->nCols; col_index++) {
+            m_transposed.values[col_index][row_index] = m->values[row_index][col_index];
+        }
+    }
+    *m = m_transposed;
+}
