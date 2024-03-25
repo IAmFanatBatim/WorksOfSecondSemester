@@ -278,14 +278,19 @@ int main() {
     freeMemMatrix(&mats[1]);
     printf("%p", mats[1].values);*/
     matrix mat = getMemMatrix(3, 3);
+    //matrix mot = getMemMatrix(3, 2);
     inputMatrix(&mat);
+    //inputMatrix(&mot);
     /*swapRows(&mat, 1, 2);
     outputMatrix(mat);
     swapColumns(&mat, 1, 2);
     outputMatrix(mat);*/
     //insertionSortRowsMatrixByRowCriteria(&mat, getSum);
     //outputMatrix(mat);
-    selectionSortColsMatrixByColCriteria(&mat, getSum);
+    //selectionSortColsMatrixByColCriteria(&mat, getSum);
+    printf("%d %d %d", isSquareMatrix(&mat), isEMatrix(&mat), isSymmetricMatrix(&mat));
+    //printf("%d\n", areTwoMatricesEqual(&mat, &mot));
     outputMatrix(mat);
+    //outputMatrix(mot);
     return 0;
 }

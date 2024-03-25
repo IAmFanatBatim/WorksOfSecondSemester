@@ -121,3 +121,41 @@ void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int))
         swapColumns(m, start_index, minPos);
     }
 }
+
+bool isSquareMatrix(matrix *m) {
+    return m->nRows == m->nCols;
+}
+
+bool areTwoMatricesEqual(matrix *m1, matrix *m2) {
+    bool result = m1->nRows == m2->nRows && m1->nCols == m2->nCols;
+    int row_index = 0;
+    while (result && row_index < m1->nRows) {
+        result = memcmp(m1->values[row_index], m2->values[row_index], sizeof(int)*m1->nCols) == 0;
+        row_index++;
+    }
+    return result;
+}
+
+bool isEMatrix(matrix *m) {
+    bool result = isSquareMatrix(m);
+    for (int row_index = 0; row_index < m->nRows && result; row_index++) {
+        for (int col_index = 0; col_index < row_index && result; col_index++) {
+            if (row_index == col_index) {
+                result = m->values[row_index][col_index] == 1;
+            } else {
+                result = m->values[row_index][col_index] == 0;
+            }
+        }
+    }
+    return result;
+}
+
+bool isSymmetricMatrix(matrix *m) {
+    bool result = isSquareMatrix(m);
+    for (int row_index = 0; row_index < m->nRows && result; row_index++) {
+        for (int col_index = 0; col_index < row_index && result; col_index++) {
+            result = m->values[row_index][col_index] == m->values[col_index][row_index];
+        }
+    }
+    return result;
+}

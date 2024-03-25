@@ -1,6 +1,8 @@
 #ifndef INC_MATRIX_H
 #define INC_MATRIX_H
 
+#include <stdbool.h>
+
 typedef struct {
     int **values; // элементы матрицы
     int nRows; // количество рядов
@@ -47,4 +49,17 @@ void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int))
 
 //выполняет сортировку выбором столбцов матрицы m по неубыванию значения функции criteria, применяемой для столбцов
 void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int));
+
+//возвращает 1 если матрица m является квадратной, и 0 в противном случае
+bool isSquareMatrix(matrix *m);
+
+//возвращает 1, если матрицы m1 и m2 равны, и 0 в противном случае
+bool areTwoMatricesEqual(matrix *m1, matrix *m2);
+
+//возвращает 1 если матрица m является единичной, и 0 в противном случае.
+bool isEMatrix(matrix *m);
+
+//возвращает 1, если матрица m является симметричной, и 0 в противном случае
+bool isSymmetricMatrix(matrix *m);
+
 #endif
