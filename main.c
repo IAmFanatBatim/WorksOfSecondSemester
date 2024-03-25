@@ -611,6 +611,7 @@ void test_getMaxValuePos() {
 }
 
 void test_matrix () {
+    //Тестирование матрицы, matrix
     test_swapRows();
     test_swapColumns();
     test_insertionSortRowsMatrixByRowCriteria();

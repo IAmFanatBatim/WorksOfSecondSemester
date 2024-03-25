@@ -7,23 +7,23 @@
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int*) * nRows);
-    for (int i = 0; i < nRows; i++) {
-        values[i] = (int *) malloc(sizeof(int) * nCols);
+    for (int row_ind = 0; row_ind < nRows; row_ind++) {
+        values[row_ind] = (int *) malloc(sizeof(int) * nCols);
     }
     return (matrix){values, nRows, nCols};
 }
 
 matrix *getMemArrayOfMatrices(int nMatrices, int nRows, int nCols) {
     matrix *ms = (matrix*) malloc (sizeof(matrix) * nMatrices);
-    for (int i = 0; i < nMatrices; i++) {
-        ms[i] = getMemMatrix(nRows, nCols);
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrices; cur_mat_ind++) {
+        ms[cur_mat_ind] = getMemMatrix(nRows, nCols);
     }
     return ms;
 }
 
 void freeMemMatrix(matrix *m) {
-    for (int i = 0; i < m->nRows; i++) {
-        free(m->values[i]);
+    for (int row_ind = 0; row_ind < m->nRows; row_ind++) {
+        free(m->values[row_ind]);
     }
     free(m->values);
     m->values = NULL;
@@ -32,32 +32,32 @@ void freeMemMatrix(matrix *m) {
 }
 
 void freeMemMatrices(matrix *ms, int nMatrices) {
-    for (int i = 0; i < nMatrices; i++) {
-        freeMemMatrix(&(ms[i]));
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrices; cur_mat_ind++) {
+        freeMemMatrix(&(ms[cur_mat_ind]));
     }
     ms = NULL;
 }
 
 void inputMatrix(matrix *m) {
-    for (int i = 0; i < m->nRows; i++) {
-        for (int j = 0; j < m->nCols; j++) {
-            scanf("%d", &(m->values[i][j]));
+    for (int row_ind = 0; row_ind < m->nRows; row_ind++) {
+        for (int col_ind = 0; col_ind < m->nCols; col_ind++) {
+            scanf("%d", &(m->values[row_ind][col_ind]));
         }
     }
 }
 
 void inputMatrices(matrix *ms, int nMatrices) {
-    for (int i = 0; i < nMatrices; i++) {
-        inputMatrix(ms + i);
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrices; cur_mat_ind++) {
+        inputMatrix(ms + cur_mat_ind);
     }
 }
 
 void outputMatrix(matrix m) {
     if (m.nRows != 0 && m.nCols != 0) {
-        for (int i = 0; i < m.nRows; i++) {
+        for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
             printf("|");
-            for (int j = 0; j < m.nCols; j++) {
-                printf("%d ", m.values[i][j]);
+            for (int col_ind = 0; col_ind < m.nCols; col_ind++) {
+                printf("%d ", m.values[row_ind][col_ind]);
             }
             printf("\b|\n");
         }
@@ -65,8 +65,8 @@ void outputMatrix(matrix m) {
 }
 
 void outputMatrices(matrix *ms, int nMatrices) {
-    for (int i = 0; i < nMatrices; i++) {
-        outputMatrix(ms[i]);
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrices; cur_mat_ind++) {
+        outputMatrix(ms[cur_mat_ind]);
         printf("\n");
     }
 }
@@ -112,6 +112,7 @@ void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int))
         }
         criteria_value[i] = criteria(col_elements, m->nRows);
     }
+
     for (int start_index = 0; start_index < m->nRows-1; start_index++) {
         int minPos = start_index;
         for (int cur_index = start_index + 1; cur_index < m->nRows; cur_index++)
@@ -216,9 +217,9 @@ position getMaxValuePos(matrix m) {
 matrix createMatrixFromArray(const int *a, size_t nRows, size_t nCols) {
     matrix m = getMemMatrix(nRows, nCols);
     int k = 0;
-    for (int i = 0; i < nRows; i++) {
-        for (int j = 0; j < nCols; j++) {
-            m.values[i][j] = a[k++];
+    for (int row_ind = 0; row_ind < nRows; row_ind++) {
+        for (int col_ind = 0; col_ind < nCols; col_ind++) {
+            m.values[row_ind][col_ind] = a[k++];
         }
     }
     return m;
@@ -229,9 +230,9 @@ matrix createMatrixFromArray(const int *a, size_t nRows, size_t nCols) {
 matrix *createArrayOfMatrixFromArray(const int *values, size_t nMatrices, size_t nRows, size_t nCols) {
     matrix *ms = getMemArrayOfMatrices(nMatrices, nRows, nCols);
     int l = 0;
-    for (size_t k = 0; k < nMatrices; k++)
-        for (size_t i = 0; i < nRows; i++)
-            for (size_t j = 0; j < nCols; j++)
-                ms[k].values[i][j] = values[l++];
+    for (size_t cur_mat_ind = 0; cur_mat_ind < nMatrices; cur_mat_ind++)
+        for (size_t row_ind = 0; row_ind < nRows; row_ind++)
+            for (size_t col_ind = 0; col_ind < nCols; col_ind++)
+                ms[cur_mat_ind].values[row_ind][col_ind] = values[l++];
     return ms;
 }
