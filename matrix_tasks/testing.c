@@ -43,9 +43,81 @@ void test_swapRowsWithMaxAndMinElement_MaxMinInOneRow() {
     freeMemMatrix(&mat_result);
 }
 
+void test_sortRowsByMaxElement_matrixOfUnique() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 9, 2,
+                    5, 8, 4,
+                    7, 12, 10,
+                    6, 0, 1
+            }, 4, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    6, 0, 1,
+                    5, 8, 4,
+                    3, 9, 2,
+                    7, 12, 10
+            }, 3, 3
+    );
+    sortRowsByMaxElement(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
+void test_sortRowsByMaxElement_maxRepeating() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 9, 2,
+                    5, 8, 4,
+                    7, 9, 3,
+                    6, 0, 8
+            }, 4, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    5, 8, 4,
+                    6, 0, 8,
+                    3, 9, 2,
+                    7, 9, 3
+            }, 3, 3
+    );
+    sortRowsByMaxElement(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
+void test_sortRowsByMaxElement_noNeedToSort() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 7, 2,
+                    5, 8, 4,
+                    7, 9, 3,
+                    6, 10, 8
+            }, 4, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    3, 7, 2,
+                    5, 8, 4,
+                    7, 9, 3,
+                    6, 10, 8
+            }, 3, 3
+    );
+    sortRowsByMaxElement(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
+    test_sortRowsByMaxElement_matrixOfUnique();
+    test_sortRowsByMaxElement_maxRepeating();
+    test_sortRowsByMaxElement_noNeedToSort();
 }
 
 int main() {

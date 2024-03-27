@@ -7,3 +7,8 @@ void swapRowsWithMaxAndMinElement (matrix *m) {
     position min_pos = getMinValuePos(*m);
     swapRows(m, max_pos.rowIndex, min_pos.rowIndex);
 };
+
+//2. Упорядочивает строки матрицы по неубыванию наибольших элементов строк
+void sortRowsByMaxElement(matrix *m) {
+    insertionSortRowsMatrixByRowCriteria(m, getMax);
+}
