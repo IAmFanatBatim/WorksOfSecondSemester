@@ -12,3 +12,8 @@ void swapRowsWithMaxAndMinElement (matrix *m) {
 void sortRowsByMaxElement(matrix *m) {
     insertionSortRowsMatrixByRowCriteria(m, getMax);
 }
+
+//3. Упорядочивает столбцы матрицы по неубыванию минимальных элементов столбцов
+void sortColsByMinElement(matrix *m) {
+    selectionSortColsMatrixByColCriteria(m, getMin);
+}
