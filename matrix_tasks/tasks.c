@@ -26,3 +26,14 @@ void getSquareOfMatrixIfSymmetric(matrix *m) {
         *m = square;
     }
 }
+
+//5. Транспонирует матрицу, если среди сумм элементов строк матрицы нет равных
+void transposeIfMatrixHasNotEqualSumOfRows(matrix *m) {
+    int sum_of_rows[m->nRows];
+    for (int row_ind = 0; row_ind < m->nRows; row_ind++) {
+        sum_of_rows[row_ind] = getSum(m->values[row_ind], m->nCols);
+    }
+    if (isUnique(sum_of_rows, m->nRows)) {
+        transposeMatrix(m);
+    }
+}

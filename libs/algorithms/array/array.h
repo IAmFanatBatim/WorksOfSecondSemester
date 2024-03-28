@@ -2,6 +2,7 @@
 #define INC_ARRAY_H
 
 #include <stddef.h>
+#include <stdbool.h>
 
 //совершает обмен значениями переменных по адресам a и b, тип данных которых имеет размер type_size
 void swapVoid (void *a, void *b, int type_size);
@@ -14,6 +15,9 @@ int getMax(int *a, int n);
 
 //возвращает минимальный элемент массива a размера n
 int getMin(int *a, int n);
+
+//возвращает 1, если каждый элемент массива a размера n уникален, и 0 в противном случае
+bool isUnique(int *a, int n);
 
 //ввод массива data размера n
 void inputArray_(int *a , size_t n);

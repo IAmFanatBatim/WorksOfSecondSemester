@@ -235,6 +235,75 @@ void test_getSquareOfMatrixIfSymmetric_asymmetric() {
     freeMemMatrix(&mat_result);
 }
 
+void test_transposeIfMatrixHasNotEqualSumOfRows_squareUniqueSums() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    2, 4, 1,
+                    4, 3, 4
+            }, 3, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 4,
+                    2, 4, 3,
+                    3, 1, 4
+            }, 3, 3
+    );
+    transposeIfMatrixHasNotEqualSumOfRows(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
+void test_transposeIfMatrixHasNotEqualSumOfRows_freeShapeUniqueSums() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    2, 4, 1,
+                    4, 3, 4,
+                    2, 7, 8,
+                    1, 0, 1
+            }, 5, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 4, 2, 1,
+                    2, 4, 3, 7, 0,
+                    3, 1, 4, 8, 1
+            }, 3, 5
+    );
+    transposeIfMatrixHasNotEqualSumOfRows(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
+void test_transposeIfMatrixHasNotEqualSumOfRows_freeShapeSumsRepeated() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    6, 6, 5,
+                    3, 0, 3,
+                    2, 7, 8,
+                    1, 0, 1
+            }, 5, 3
+    );
+    matrix mat_result = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 3,
+                    6, 6, 5,
+                    3, 0, 3,
+                    2, 7, 8,
+                    1, 0, 1
+            }, 5, 3
+    );
+    transposeIfMatrixHasNotEqualSumOfRows(&mat);
+    assert(areTwoMatricesEqual(&mat, &mat_result));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&mat_result);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -247,6 +316,9 @@ void test () {
     test_getSquareOfMatrixIfSymmetric_symmetric();
     test_getSquareOfMatrixIfSymmetric_asymmetric();
     test_getSquareOfMatrixIfSymmetric_symmetricButMore();
+    test_transposeIfMatrixHasNotEqualSumOfRows_squareUniqueSums();
+    test_transposeIfMatrixHasNotEqualSumOfRows_freeShapeUniqueSums();
+    test_transposeIfMatrixHasNotEqualSumOfRows_freeShapeSumsRepeated();
 }
 
 int main() {

@@ -41,6 +41,18 @@ int getMin(int *a, int n) {
     return min;
 }
 
+bool isUnique(int *a, int n) {
+    bool result = 1;
+    for (int i = 0; i < n-1 && result; i++) {
+        for (int j = i + 1; j < n && result; j++) {
+            if (a[i] == a[j]) {
+                result = 0;
+            }
+        }
+    }
+    return result;
+}
+
 void inputArray_(int *const a, const size_t n) {
     for (size_t i = 0; i < n; i++)
         scanf("%d", &a[i]);
