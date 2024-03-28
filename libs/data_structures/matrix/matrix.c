@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 #include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.c"
-
+#ifndef INC_MATRIX_С
+#define INC_MATRIX_С
 
 matrix getMemMatrix(int nRows, int nCols) {
     int **values = (int **) malloc(sizeof(int*) * nRows);
@@ -88,18 +89,17 @@ void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int))
     for (int i = 0; i < m->nRows; i++) {
         criteria_value[i] = criteria(m->values[i], m->nCols);
     }
-    for (int start_index = 1; start_index < m->nCols; start_index++) {
+    for (int start_index = 1; start_index < m->nRows; start_index++) {
         int cur_value = criteria_value[start_index];
         int *cur_row_pointer = m->values[start_index];
         int cur_index = start_index;
-        while (cur_index> 0 && criteria_value[cur_index - 1] > cur_value) {
+        while (cur_index > 0 && criteria_value[cur_index - 1] > cur_value) {
             criteria_value[cur_index] = criteria_value[cur_index - 1];
             m->values[cur_index] = m->values[cur_index - 1];
             cur_index--;
         }
         criteria_value[cur_index] = cur_value;
         m->values[cur_index] = cur_row_pointer;
-        //swapRows(m, start_index, cur_index);
     }
 }
 
@@ -113,9 +113,9 @@ void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int))
         criteria_value[i] = criteria(col_elements, m->nRows);
     }
 
-    for (int start_index = 0; start_index < m->nRows-1; start_index++) {
+    for (int start_index = 0; start_index < m->nCols-1; start_index++) {
         int minPos = start_index;
-        for (int cur_index = start_index + 1; cur_index < m->nRows; cur_index++)
+        for (int cur_index = start_index + 1; cur_index < m->nCols; cur_index++)
             if (criteria_value[cur_index] < criteria_value[minPos])
                 minPos = cur_index;
         swapVoid(&criteria_value[start_index], &criteria_value[minPos], sizeof(int));
@@ -236,3 +236,19 @@ matrix *createArrayOfMatrixFromArray(const int *values, size_t nMatrices, size_t
                 ms[cur_mat_ind].values[row_ind][col_ind] = values[l++];
     return ms;
 }
+
+matrix mulMatrices(matrix m1, matrix m2) {
+    assert(m1.nCols == m2.nRows);
+    matrix result = getMemMatrix(m1.nRows, m2.nCols);
+    for (int row_ind = 0; row_ind < result.nRows; row_ind++) {
+        for (int col_ind = 0; col_ind < result.nCols; col_ind++) {
+            result.values[row_ind][col_ind] = 0;
+            for (int summand_ind = 0; summand_ind < m1.nRows; summand_ind++) {
+                result.values[row_ind][col_ind] += m1.values[row_ind][summand_ind] * m2.values[summand_ind][col_ind];
+            }
+        }
+    }
+    return result;
+}
+
+#endif

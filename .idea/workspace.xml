@@ -24,7 +24,34 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-30da62c5138881a0dbd9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c500d01813ec87671209.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-20T15-25-26-0323.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/.cmake/api/v1/reply/target-matrix-Debug-c2e0093054f5e154f77a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b3eccf756327b0fe1dac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-65a6dc82d0f040262fd4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-1dce5b9a6618c4240744.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-27T17-11-51-0305.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/target-matrix_tasks-Debug-b596101dda2dfa79ea13.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-1a91e91f1c114e4c2010.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix_tasks/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/tasks.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix_tasks/testing.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/testing.c" afterDir="false" />
     </list>
@@ -169,7 +196,10 @@
       <workItem from="1711559409426" duration="84000" />
       <workItem from="1711560888584" duration="807000" />
       <workItem from="1711562540110" duration="125000" />
-      <workItem from="1711562711334" duration="3502000" />
+      <workItem from="1711562711334" duration="6396000" />
+      <workItem from="1711569583745" duration="81000" />
+      <workItem from="1711604180608" duration="498000" />
+      <workItem from="1711605775639" duration="167000" />
     </task>
     <servers />
   </component>

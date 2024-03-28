@@ -77,7 +77,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "library.c",
+			"path" : "matrix.c",
 			"sourceGroupIndex" : 0
 		}
 	],

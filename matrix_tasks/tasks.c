@@ -17,3 +17,12 @@ void sortRowsByMaxElement(matrix *m) {
 void sortColsByMinElement(matrix *m) {
     selectionSortColsMatrixByColCriteria(m, getMin);
 }
+
+//4. Заменяет квадратную матрицу m ее квадратом, если она симметрична
+void getSquareOfMatrixIfSymmetric(matrix *m) {
+    if(isSymmetricMatrix(m)) {
+        matrix square = mulMatrices(*m, *m);
+        freeMemMatrix(m);
+        *m = square;
+    }
+}

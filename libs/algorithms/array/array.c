@@ -28,7 +28,7 @@ int getSum(int *a, int n) {
 int getMax(int *a, int n) {
     int max = a[0];
     for (int i = 1; i < n; i++) {
-        max += max2(a[i], max);
+        max = max2(a[i], max);
     }
     return max;
 }
@@ -36,7 +36,7 @@ int getMax(int *a, int n) {
 int getMin(int *a, int n) {
     int min = a[0];
     for (int i = 1; i < n; i++) {
-        min += max2(a[i], min);
+        min = min2(a[i], min);
     }
     return min;
 }
