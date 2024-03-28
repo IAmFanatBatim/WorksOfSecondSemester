@@ -37,3 +37,11 @@ void transposeIfMatrixHasNotEqualSumOfRows(matrix *m) {
         transposeMatrix(m);
     }
 }
+
+//6. Возвращает 1, если матрицы m 1 и m2 являются  взаимно обратными, и 0 в противном случае
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+    matrix mul = mulMatrices(m1, m2);
+    bool result = isEMatrix(&mul);
+    freeMemMatrix(&mul);
+    return result;
+}
