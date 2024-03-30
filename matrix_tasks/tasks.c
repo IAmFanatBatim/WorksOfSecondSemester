@@ -45,3 +45,22 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
     freeMemMatrix(&mul);
     return result;
 }
+
+//7. Возвращает сумму максимальных элементов всех псевдодиагоналей данной матрицы.
+long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
+    int diagonals = m.nRows + m.nCols - 1;
+    int diagonals_under_main = m.nCols - 1;
+    int max_elements[diagonals];
+    for (int i = 0; i < diagonals; i++) {
+        max_elements[i] = INT_MIN;
+    }
+    for (int row_index = 0; row_index < m.nRows; row_index++) {
+        for (int col_index = 0; col_index < m.nCols; col_index++) {
+            max_elements[row_index - col_index + diagonals_under_main] = max2(
+                    max_elements[row_index - col_index + diagonals_under_main],
+                    m.values[row_index][col_index]
+            );
+        }
+    }
+    return getSum(max_elements, diagonals) - max_elements[diagonals_under_main];
+}

@@ -340,6 +340,55 @@ void test_isMutuallyInverseMatrices_notInverse() {
     freeMemMatrix(&mat2);
 }
 
+void test_findSumOfMaxesOfPseudoDiagonal_RowsMoreThanCols() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2,
+                    1, 4,
+                    3, 2,
+                    1, 7
+            }, 4, 2
+    );
+    assert(findSumOfMaxesOfPseudoDiagonal(mat) == 12);
+    freeMemMatrix(&mat);
+}
+
+void test_findSumOfMaxesOfPseudoDiagonal_ColsMoreThanRows() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2, 2, 4,
+                    1, 4, 6, 3,
+                    3, 2, 1, 2
+            }, 3, 4
+    );
+    assert(findSumOfMaxesOfPseudoDiagonal(mat) == 18);
+    freeMemMatrix(&mat);
+}
+
+void test_findSumOfMaxesOfPseudoDiagonal_square() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2, 5,
+                    1, 3, 6,
+                    3, 2, 1
+            }, 3, 3
+    );
+    assert(findSumOfMaxesOfPseudoDiagonal(mat) == 16);
+    freeMemMatrix(&mat);
+}
+
+void test_findSumOfMaxesOfPseudoDiagonal_someMaxAtBeginningOfDiagonal() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2, 5, 4,
+                    1, 3, 6, 3,
+                    3, 2, 1, 2
+            }, 3, 4
+    );
+    assert(findSumOfMaxesOfPseudoDiagonal(mat) == 20);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -357,6 +406,10 @@ void test () {
     test_transposeIfMatrixHasNotEqualSumOfRows_freeShapeSumsRepeated();
     test_isMutuallyInverseMatrices_inverse();
     test_isMutuallyInverseMatrices_notInverse();
+    test_findSumOfMaxesOfPseudoDiagonal_RowsMoreThanCols();
+    test_findSumOfMaxesOfPseudoDiagonal_ColsMoreThanRows();
+    test_findSumOfMaxesOfPseudoDiagonal_square();
+    test_findSumOfMaxesOfPseudoDiagonal_someMaxAtBeginningOfDiagonal();
 }
 
 int main() {
