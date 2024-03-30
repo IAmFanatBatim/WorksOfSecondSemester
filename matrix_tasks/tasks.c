@@ -64,3 +64,14 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     }
     return getSum(max_elements, diagonals) - max_elements[diagonals_under_main];
 }
+
+int getMinInArea(matrix m) {
+    position pos_of_max = getMaxValuePos(m);
+    int min_of_area = m.values[pos_of_max.rowIndex][pos_of_max.colIndex];
+    for (int col_ind = 0; col_ind < m.nCols; col_ind++) {
+        for (int row_ind = 0; row_ind <= pos_of_max.rowIndex - abs(pos_of_max.colIndex - col_ind); row_ind++) {
+            min_of_area = min2(min_of_area, m.values[row_ind][col_ind]);
+        }
+    }
+    return min_of_area;
+}

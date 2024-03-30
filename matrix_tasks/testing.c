@@ -389,6 +389,42 @@ void test_findSumOfMaxesOfPseudoDiagonal_someMaxAtBeginningOfDiagonal() {
     freeMemMatrix(&mat);
 }
 
+void test_getMinInArea_areaStartsWithFirstElement() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    10, 7, 5, 6,
+                    3, 11, 8, 9,
+                    4, 1, 12, 12
+            }, 3, 4
+    );
+    assert(getMinInArea(mat) == 5);
+    freeMemMatrix(&mat);
+}
+
+void test_getMinInArea_areaStartsBelowFirstElement() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    10, 7, 5, 6,
+                    3, 11, 8, 9,
+                    4, 14, 1, 12
+            }, 3, 4
+    );
+    assert(getMinInArea(mat) == 3);
+    freeMemMatrix(&mat);
+}
+
+void test_getMinInArea_areaLeftEdgesFree() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    10, 7, 5, 6, 2,
+                    3, 18, 12, 9, 15,
+                    4, 0, 1, 13, 13,
+            }, 3, 4
+    );
+    assert(getMinInArea(mat) == 5);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -410,6 +446,9 @@ void test () {
     test_findSumOfMaxesOfPseudoDiagonal_ColsMoreThanRows();
     test_findSumOfMaxesOfPseudoDiagonal_square();
     test_findSumOfMaxesOfPseudoDiagonal_someMaxAtBeginningOfDiagonal();
+    test_getMinInArea_areaStartsWithFirstElement();
+    test_getMinInArea_areaStartsBelowFirstElement();
+    test_getMinInArea_areaLeftEdgesFree();
 }
 
 int main() {
