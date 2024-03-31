@@ -17,8 +17,8 @@ void swapVoid (void *a, void *b, int type_size) {
     memcpy(b, temp, type_size);
 }
 
-int getSum(int *a, int n) {
-    int sum = 0;
+long long getSum(int *a, int n) {
+    long long sum = 0;
     for (int i = 0; i < n; i++) {
         sum += a[i];
     }
@@ -59,6 +59,16 @@ float getDistance(int *a, int n) {
          sqr_distance += a[i] * a[i];
     }
     return sqrt(sqr_distance);
+}
+
+int countNUnique(long long *a, int n) {
+    int unique_counter = n;
+    for (int i = 0; i < n-1; i++) {
+        if (a[i] == a[i+1]) {
+            unique_counter -= 1;
+        }
+    }
+    return unique_counter;
 }
 
 void inputArray_(int *const a, const size_t n) {

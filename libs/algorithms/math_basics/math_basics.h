@@ -5,6 +5,9 @@
 //Функция-предикат для быстрой сортировки по возрастанию
 int compare_ints(const void* a, const void* b);
 
+//Функция-предикат для быстрой сортировки по возрастанию чисел типа long long
+int cmp_long_long(const void* a, const void* b);
+
 //возвращает минимальное из двух целых чисел x и y
 int min2(const int x, const int y);
 
@@ -19,4 +22,5 @@ int max3(const int x, const int y, const int z);
 
 //возвращает 1, если вещественные числа x и y различаются незначительно и могут считаться равными, и 0 в противном случае
 bool are_double_equal(double x, double y);
+
 #endif

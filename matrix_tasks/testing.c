@@ -493,6 +493,68 @@ void test_sortByDistances_someDistancesAreEqual() {
     freeMemMatrix(&result_mat);
 }
 
+void test_countNUnique_allUnique() {
+    long long *array = (long long[]) {1, 2, 3, 4, 5};
+    assert(countNUnique(array, 5) == 5);
+}
+
+void test_countNUnique_notAllUnique() {
+    long long *array = (long long[]) {1, 1, 1, 1, 2, 2, 3, 4, 4};
+    assert(countNUnique(array, 9) == 4);
+}
+
+void test_countNUnique_allSame() {
+    long long *array = (long long[]) {1, 1, 1, 1, 1};
+    assert(countNUnique(array, 5) == 1);
+}
+
+void test_countNUnique_empty() {
+    long long *array = (long long[]) {};
+    assert(countNUnique(array, 0) == 0);
+}
+
+void test_countEqClassesByRowsSum_allUnique() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                     1, 2, 3,
+                     3, 4, 1,
+                     2, 0, 1,
+                     7, 8, 2,
+                     5, 6, 4
+            }, 5, 3
+    );
+    assert(countEqClassesByRowsSum(mat) == 5);
+    freeMemMatrix(&mat);
+}
+
+void test_countEqClassesByRowsSum_notAllUnique() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2, 3,
+                    3, 4, 1,
+                    2, 0, 1,
+                    7, 8, 0,
+                    5, 6, 4
+            }, 5, 3
+    );
+    assert(countEqClassesByRowsSum(mat) == 3);
+    freeMemMatrix(&mat);
+}
+
+void test_countEqClassesByRowsSum_allSame() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    9, 2, 4,
+                    3, 4, 8,
+                    4, 10, 1,
+                    7, 8, 0,
+                    5, 6, 4
+            }, 5, 3
+    );
+    assert(countEqClassesByRowsSum(mat) == 1);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -520,6 +582,13 @@ void test () {
     test_sortByDistances_rowsMoreThanCols();
     test_sortByDistances_colsMoreThanRows();
     test_sortByDistances_someDistancesAreEqual();
+    test_countNUnique_allUnique();
+    test_countNUnique_notAllUnique();
+    test_countNUnique_allSame();
+    test_countNUnique_empty();
+    test_countEqClassesByRowsSum_allUnique();
+    test_countEqClassesByRowsSum_notAllUnique();
+    test_countEqClassesByRowsSum_allSame();
 }
 
 int main() {

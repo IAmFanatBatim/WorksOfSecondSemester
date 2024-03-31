@@ -8,7 +8,7 @@
 void swapVoid (void *a, void *b, int type_size);
 
 //возвращает сумму всех элементов массива a размера n
-int getSum(int *a, int n);
+long long getSum(int *a, int n);
 
 //возвращает максимальный элемент массива a размера n
 int getMax(int *a, int n);
@@ -19,9 +19,15 @@ int getMin(int *a, int n);
 //возвращает 1, если каждый элемент массива a размера n уникален, и 0 в противном случае
 bool isUnique(int *a, int n);
 
-//ввод массива data размера n
+//возвращает расстояние точки в n-мерном пространстве, координаты которой хранятся в массиве a размера n, от начала координат
+float getDistance(int *a, int n);
+
+//возвращает количество элементов в отсортированном массиве a размера n без учета дубликатов
+int countNUnique(long long *a, int n);
+
+//ввод массива a размера n
 void inputArray_(int *a , size_t n);
-//вывод массива data размера n
+//вывод массива a размера n
 void outputArray_(const int *a, size_t n);
 //возвращает значение первого вхождения элемента x
 //в массиве a размера n при его наличии, иначе - n

@@ -65,6 +65,8 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
     return getSum(max_elements, diagonals) - max_elements[diagonals_under_main];
 }
 
+//8. Возвращает минимальный элемент матрицы m в области - перевернутой пирамиде,
+// которая упирается в верхнюю и боковые границы матрицы и вершина которой - позиция максимального элемента
 int getMinInArea(matrix m) {
     position pos_of_max = getMaxValuePos(m);
     int min_of_area = m.values[pos_of_max.rowIndex][pos_of_max.colIndex];
@@ -76,6 +78,18 @@ int getMinInArea(matrix m) {
     return min_of_area;
 }
 
+//9. Сортирует строки матрицы m неубыванию их расстояний до начала координат
+// если эти строки представить как координаты точки в пространстве с m->nCols измерениями
 void sortByDistances(matrix *m) {
     insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
+
+//10. Возвращает количество классов эквивалентных строк данной прямоугольной матрицы
+int countEqClassesByRowsSum(matrix m) {
+    long long sums_of_rows[m.nRows];
+    for (int i = 0; i < m.nRows; i++) {
+        sums_of_rows[i] = getSum(m.values[i], m.nCols);
+    }
+    qsort(sums_of_rows, m.nRows, sizeof(long long), cmp_long_long);
+    return countNUnique(sums_of_rows, m.nRows);
 }

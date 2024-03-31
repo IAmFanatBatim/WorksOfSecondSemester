@@ -21,7 +21,10 @@
     <list default="true" id="7411a0da-9c47-4296-b7f7-16bb7efaf848" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/array/array.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/algorithms/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/array/array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/algorithms/math_basics/math_basics.c" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/math_basics/math_basics.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/algorithms/math_basics/math_basics.h" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/math_basics/math_basics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../main.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.c" afterDir="false" />
@@ -96,6 +99,11 @@
       <workItem from="1711865650200" duration="834000" />
       <workItem from="1711867562595" duration="101000" />
       <workItem from="1711867770378" duration="54000" />
+      <workItem from="1711876929828" duration="219000" />
+      <workItem from="1711877343459" duration="76000" />
+      <workItem from="1711877531821" duration="888000" />
+      <workItem from="1711879243901" duration="690000" />
+      <workItem from="1711880374982" duration="177000" />
     </task>
     <servers />
   </component>
