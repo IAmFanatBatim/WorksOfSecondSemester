@@ -53,6 +53,14 @@ bool isUnique(int *a, int n) {
     return result;
 }
 
+float getDistance(int *a, int n) {
+    int sqr_distance = 0;
+    for (int i = 0; i < n; i++) {
+         sqr_distance += a[i] * a[i];
+    }
+    return sqrt(sqr_distance);
+}
+
 void inputArray_(int *const a, const size_t n) {
     for (size_t i = 0; i < n; i++)
         scanf("%d", &a[i]);

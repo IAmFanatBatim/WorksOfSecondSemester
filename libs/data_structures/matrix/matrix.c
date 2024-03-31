@@ -103,6 +103,26 @@ void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int))
     }
 }
 
+void insertionSortRowsMatrixByRowCriteriaF(matrix *m, float (*criteria)(int *, int)) {
+    float criteria_value[m->nRows];
+    for (int i = 0; i < m->nRows; i++) {
+        criteria_value[i] = criteria(m->values[i], m->nCols);
+    }
+    for (int start_index = 1; start_index < m->nRows; start_index++) {
+        float cur_value = criteria_value[start_index];
+        int *cur_row_pointer = m->values[start_index];
+        int cur_index = start_index;
+        while (cur_index > 0 && criteria_value[cur_index - 1] > cur_value) {
+            criteria_value[cur_index] = criteria_value[cur_index - 1];
+            m->values[cur_index] = m->values[cur_index - 1];
+            cur_index--;
+        }
+        criteria_value[cur_index] = cur_value;
+        m->values[cur_index] = cur_row_pointer;
+    }
+}
+
+
 void selectionSortColsMatrixByColCriteria(matrix *m, int (*criteria)(int*, int)) {
     int criteria_value[m->nCols];
     for (int i = 0; i < m->nCols; i++) {

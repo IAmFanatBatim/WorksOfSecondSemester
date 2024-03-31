@@ -425,6 +425,74 @@ void test_getMinInArea_areaLeftEdgesFree() {
     freeMemMatrix(&mat);
 }
 
+
+void test_sortByDistances_rowsMoreThanCols() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 4,
+                    2, 8, 3,
+                    3, 1, 0,
+                    1, 5, 2
+            }, 4, 3
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    3, 1, 0,
+                    1, 2, 4,
+                    1, 5, 2,
+                    2, 8, 3
+            }, 4, 3
+    );
+    sortByDistances(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
+void test_sortByDistances_colsMoreThanRows() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    2, 5, 3, 2,
+                    3, 7, 0, 4,
+                    1, 3, 4,0
+            }, 3, 4
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    1, 3, 4, 0,
+                    2, 5, 3, 2,
+                    3, 7, 0, 4,
+            }, 3, 4
+    );
+    sortByDistances(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
+void test_sortByDistances_someDistancesAreEqual() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    1, 2, 4,
+                    2, 8, 3,
+                    3, 1, 0,
+                    1, 4, 2
+            }, 4, 3
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    3, 1, 0,
+                    1, 2, 4,
+                    1, 4, 2,
+                    2, 8, 3
+            }, 4, 3
+    );
+    sortByDistances(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -449,6 +517,9 @@ void test () {
     test_getMinInArea_areaStartsWithFirstElement();
     test_getMinInArea_areaStartsBelowFirstElement();
     test_getMinInArea_areaLeftEdgesFree();
+    test_sortByDistances_rowsMoreThanCols();
+    test_sortByDistances_colsMoreThanRows();
+    test_sortByDistances_someDistancesAreEqual();
 }
 
 int main() {

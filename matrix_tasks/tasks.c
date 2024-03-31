@@ -75,3 +75,7 @@ int getMinInArea(matrix m) {
     }
     return min_of_area;
 }
+
+void sortByDistances(matrix *m) {
+    insertionSortRowsMatrixByRowCriteriaF(m, getDistance);
+}
