@@ -591,6 +591,67 @@ void test_getNSpecialElement_noOneSpecial() {
     freeMemMatrix(&mat);
 }
 
+void test_swapPenultimateRow_manyMins() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 1,
+                    2, 3, 5,
+                    1, 4, 6
+            }, 3, 3
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 1,
+                    3, 2, 1,
+                    1, 4, 6
+            }, 3, 3
+    );
+    swapPenultimateRow(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
+void test_swapPenultimateRow_minExtremelyRight() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 0,
+                    2, 3, 5,
+                    1, 4, 6
+            }, 3, 3
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 0,
+                    0, 5, 6,
+                    1, 4, 6
+            }, 3, 3
+    );
+    swapPenultimateRow(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
+void test_swapPenultimateRow_onlyTwoRows() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5,
+                    2, 3
+            }, 2, 2
+    );
+    matrix result_mat = createMatrixFromArray(
+            (int[]) {
+                    3, 2,
+                    2, 3
+            }, 2, 2
+    );
+    swapPenultimateRow(&mat);
+    assert(areTwoMatricesEqual(&mat, &result_mat));
+    freeMemMatrix(&mat);
+    freeMemMatrix(&result_mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -628,6 +689,8 @@ void test () {
     test_getNSpecialElement_allMaxSpecial();
     test_getNSpecialElement_notAllMaxSpecial();
     test_getNSpecialElement_noOneSpecial();
+    test_swapPenultimateRow_manyMins();
+    test_swapPenultimateRow_onlyTwoRows();
 }
 
 int main() {

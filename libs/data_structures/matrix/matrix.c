@@ -84,6 +84,14 @@ void swapColumns(matrix *m, int j1, int j2) {
     }
 }
 
+/*void swapRowAdColumn(matrix *m, int i, int j) {
+    assert(i < m->nRows && j < m->nCols);
+    assert(isSquareMatrix(m));
+    for (int common_ind = 0; common_ind < m->nRows; common_ind++) {
+        swapVoid(&m->values[i][common_ind], &m->values[common_ind][j], sizeof(int));
+    }
+}*/
+
 void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int)) {
     int criteria_value[m->nRows];
     for (int i = 0; i < m->nRows; i++) {
@@ -208,6 +216,21 @@ position getMinValuePos(matrix m) {
     position min_position = (position) {0, 0};
     for (int row_index = 0; row_index < m.nRows; row_index++) {
         for (int col_index = 0; col_index < m.nCols; col_index++) {
+            if (m.values[row_index][col_index] < min_element) {
+                min_element = m.values[row_index][col_index];
+                min_position.rowIndex = row_index;
+                min_position.colIndex = col_index;
+            }
+        }
+    }
+    return min_position;
+}
+
+position getLeftMin(matrix m) {
+    int min_element = m.values[0][0];
+    position min_position = (position) {0, 0};
+    for (int col_index = 0; col_index < m.nCols; col_index++) {
+        for (int row_index = 0; row_index < m.nRows; row_index++) {
             if (m.values[row_index][col_index] < min_element) {
                 min_element = m.values[row_index][col_index];
                 min_position.rowIndex = row_index;

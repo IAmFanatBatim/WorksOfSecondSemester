@@ -110,3 +110,16 @@ int getNSpecialElement(matrix m) {
     }
     return counter_of_special;
 }
+
+//12. Заменить предпоследнюю строку матрицы первым из столбцов, в котором находится минимальный элемент матрицы
+void swapPenultimateRow(matrix *m) {
+    assert(m->nRows >= 2);
+    position left_min = getLeftMin(*m);
+    int col_with_min[m->nRows];
+    for (int row_ind = 0; row_ind < m->nRows; row_ind++) {
+        col_with_min[row_ind] = m->values[row_ind][left_min.colIndex];
+    }
+    for (int common_ind = 0; common_ind < m->nRows; common_ind++) {
+        m->values[m->nRows - 2][common_ind] = col_with_min[common_ind];
+    }
+}
