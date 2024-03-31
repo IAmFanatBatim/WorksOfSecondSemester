@@ -97,4 +97,8 @@ matrix mulMatrices(matrix m1, matrix m2);
 
 //возвращает 1, если все строки матрицы m отсортированы по неубыванию, и 0 в противном случае
 bool hasAllNonDescendingRows(matrix m);
+
+//возвращает количество строк в матрице m, полностью состоящих из нулей
+int countZeroRows(matrix m);
+
 #endif

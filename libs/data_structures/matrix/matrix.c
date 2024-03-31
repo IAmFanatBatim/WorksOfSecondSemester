@@ -305,4 +305,14 @@ bool hasAllNonDescendingRows(matrix m) {
     return result;
 }
 
+int countZeroRows(matrix m) {
+    int zero_rows_counter = 0;
+    for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
+        if (countValues(m.values[row_ind], m.nCols, 0) == m.nCols) {
+            zero_rows_counter += 1;
+        }
+    }
+    return zero_rows_counter;
+}
+
 #endif

@@ -132,3 +132,18 @@ int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
     }
     return counter_of_non_descending;
 }
+
+//14. Выводит на экран матрицы из массива матриц, в которых число нулевых строк максимлаьно для этого массива
+void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
+    int zero_rows_for_every[nMatrix];
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
+        zero_rows_for_every[cur_mat_ind] = countZeroRows(ms[cur_mat_ind]);
+    }
+    int max_of_zero_rows = getMax(zero_rows_for_every, nMatrix);
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
+        if (zero_rows_for_every[cur_mat_ind] == max_of_zero_rows) {
+            outputMatrix(ms[cur_mat_ind]);
+            printf("\n");
+        }
+    }
+}

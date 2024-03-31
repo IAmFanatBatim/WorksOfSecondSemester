@@ -657,8 +657,10 @@ void test_countNonDescendingRowsMatrices_noOne() {
             (int[]) {
                     7, 1,
                     1, 1,
+
                     7, 6,
                     2, 1,
+
                     6, 5,
                     2, 1
             }, 3, 2, 2
@@ -672,10 +674,12 @@ void test_countNonDescendingRowsMatrices_some() {
             (int[]) {
                 7, 1,
                 1, 1,
+
                 1, 6,
                 2, 2,
-                    3, 5,
-                    2, 3
+
+                3, 5,
+                2, 3
             }, 3, 2, 2
     );
     assert(countNonDescendingRowsMatrices(mats, 3) == 2);
@@ -686,12 +690,78 @@ void test_countNonDescendingRowsMatrices_oneByOneMatrices() {
     matrix *mats = createArrayOfMatrixFromArray(
             (int[]) {
                     7,
+
                     4,
+
                     4
             }, 3, 1, 1
     );
     assert(countNonDescendingRowsMatrices(mats, 3) == 3);
     freeMemMatrix(mats);
+}
+
+void test_countZeroRows_allZeroRowsFull() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+            0, 0, 0,
+            0, 0, 0,
+            1, 4, 6
+        }, 3, 3
+    );
+    assert(countZeroRows(mat) == 2);
+    freeMemMatrix(&mat);
+}
+
+void test_countZeroRows_hasHalfFullZeroRows() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    0, 2, 0,
+                    0, 0, 0,
+                    1, 4, 6
+            }, 3, 3
+    );
+    assert(countZeroRows(mat) == 1);
+    freeMemMatrix(&mat);
+}
+
+void test_countZeroRows_noZeroRows() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    4, 2, 2,
+                    2, 6, 1,
+                    1, 4, 6
+            }, 3, 3
+    );
+    assert(countZeroRows(mat) == 0);
+    freeMemMatrix(&mat);
+}
+
+void test_printMatrixWithMaxZeroRows() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int[]) {
+                    0, 1,
+                    1, 0,
+                    0, 0,
+
+                    1, 1,
+                    2, 1,
+                    1, 1,
+
+                    0, 0,
+                    0, 0,
+                    4, 7,
+
+                    0, 0,
+                    0, 1,
+                    0, 0,
+
+                    0, 1,
+                    0, 2,
+                    0, 3
+            }, 5, 3, 2
+    );
+    printMatrixWithMaxZeroRows(mats, 5);
+    freeMemMatrices(mats, 5);
 }
 
 void test () {
@@ -736,6 +806,10 @@ void test () {
     test_countNonDescendingRowsMatrices_noOne();
     test_countNonDescendingRowsMatrices_some();
     test_countNonDescendingRowsMatrices_oneByOneMatrices();
+    test_countZeroRows_allZeroRowsFull();
+    test_countZeroRows_hasHalfFullZeroRows();
+    test_countZeroRows_noZeroRows();
+    test_printMatrixWithMaxZeroRows();
 }
 
 int main() {

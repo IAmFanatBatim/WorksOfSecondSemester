@@ -82,6 +82,16 @@ int countNUnique(long long *a, int n) {
     return unique_counter;
 }
 
+int countValues(const int *a, int n, int value) {
+    int value_counter = 0;
+    for (int i = 0; i < n; i++) {
+        if (a[i] == value) {
+            value_counter += 1;
+        }
+    }
+    return value_counter;
+}
+
 void inputArray_(int *const a, const size_t n) {
     for (size_t i = 0; i < n; i++)
         scanf("%d", &a[i]);

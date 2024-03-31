@@ -28,6 +28,9 @@ float getDistance(int *a, int n);
 //возвращает количество элементов в отсортированном массиве a размера n без учета дубликатов
 int countNUnique(long long *a, int n);
 
+//возвращает количество элементов value в массиве a размера n
+int countValues(const int *a, int n, int value);
+
 //ввод массива a размера n
 void inputArray_(int *a , size_t n);
 //вывод массива a размера n
