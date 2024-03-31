@@ -53,6 +53,17 @@ bool isUnique(int *a, int n) {
     return result;
 }
 
+bool isNonDescendingSorted(int *a, int n) {
+    bool result = 1;
+    for (int i = 0; i < n-1; i++) {
+        if (a[i] > a[i+1]) {
+            result = 0;
+            break;
+        }
+    }
+    return result;
+}
+
 float getDistance(int *a, int n) {
     int sqr_distance = 0;
     for (int i = 0; i < n; i++) {

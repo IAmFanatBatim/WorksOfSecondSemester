@@ -61,7 +61,7 @@ bool isSquareMatrix(matrix *m);
 //возвращает 1, если матрицы m1 и m2 равны, и 0 в противном случае
 bool areTwoMatricesEqual(matrix *m1, matrix *m2);
 
-//возвращает 1 если матрица m является единичной, и 0 в противном случае.
+//возвращает 1, если матрица m является единичной, и 0 в противном случае.
 bool isEMatrix(matrix *m);
 
 //возвращает 1, если матрица m является симметричной, и 0 в противном случае
@@ -94,4 +94,7 @@ matrix *createArrayOfMatrixFromArray(const int *values, size_t nMatrices, size_t
 
 //возвращает матрицу - произведение матриц m1 и m2
 matrix mulMatrices(matrix m1, matrix m2);
+
+//возвращает 1, если все строки матрицы m отсортированы по неубыванию, и 0 в противном случае
+bool hasAllNonDescendingRows(matrix m);
 #endif

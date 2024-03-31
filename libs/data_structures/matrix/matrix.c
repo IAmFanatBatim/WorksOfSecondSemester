@@ -294,4 +294,15 @@ matrix mulMatrices(matrix m1, matrix m2) {
     return result;
 }
 
+bool hasAllNonDescendingRows(matrix m) {
+    bool result = 1;
+    for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
+        if (!isNonDescendingSorted(m.values[row_ind], m.nCols)) {
+            result = 0;
+            break;
+        }
+    }
+    return result;
+}
+
 #endif

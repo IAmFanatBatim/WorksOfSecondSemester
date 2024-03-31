@@ -123,3 +123,12 @@ void swapPenultimateRow(matrix *m) {
         m->values[m->nRows - 2][common_ind] = col_with_min[common_ind];
     }
 }
+
+//13. Возвращает число матриц, строки которых упорядочены по неубыванию элементов
+int countNonDescendingRowsMatrices(matrix *ms, int nMatrix) {
+    int counter_of_non_descending = 0;
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
+        counter_of_non_descending += hasAllNonDescendingRows(ms[cur_mat_ind]);
+    }
+    return counter_of_non_descending;
+}
