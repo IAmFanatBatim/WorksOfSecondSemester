@@ -147,3 +147,18 @@ void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
         }
     }
 }
+
+//15. Выводит на экран матрицы из массива матриц, в которых число нулевых строк максимлаьно для этого массива
+void printMatrixWithMinNorma(matrix *ms, int nMatrix) {
+    int norma_for_every[nMatrix];
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
+        norma_for_every[cur_mat_ind] = getNorma(ms[cur_mat_ind]);
+    }
+    int min_norma = getMin(norma_for_every, nMatrix);
+    for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
+        if (norma_for_every[cur_mat_ind] == min_norma) {
+            outputMatrix(ms[cur_mat_ind]);
+            printf("\n");
+        }
+    }
+}

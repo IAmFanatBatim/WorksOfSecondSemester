@@ -315,4 +315,16 @@ int countZeroRows(matrix m) {
     return zero_rows_counter;
 }
 
+int getNorma(matrix m) {
+    int norma = abs(m.values[0][0]);
+    for (int row_index = 0; row_index < m.nRows; row_index++) {
+        for (int col_index = 0; col_index < m.nCols; col_index++) {
+            if (abs(m.values[row_index][col_index]) > norma) {
+                norma = abs(m.values[row_index][col_index]);
+            }
+        }
+    }
+    return norma;
+}
+
 #endif

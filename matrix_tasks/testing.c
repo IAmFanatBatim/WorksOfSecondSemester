@@ -764,6 +764,50 @@ void test_printMatrixWithMaxZeroRows() {
     freeMemMatrices(mats, 5);
 }
 
+void test_getNorma_normaIsPositive() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    -4, -2, 2,
+                    -2, 6, 1,
+                    1, 4, -5
+            }, 3, 3
+    );
+    assert(getNorma(mat) == 6);
+    freeMemMatrix(&mat);
+}
+
+void test_getNorma_normaIsNegative() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    4, -2, 2,
+                    -2, -6, 1,
+                    1, 4, -5
+            }, 3, 3
+    );
+    assert(getNorma(mat) == 6);
+    freeMemMatrix(&mat);
+}
+
+void test_printMatrixWithMinNorma() {
+    matrix *mats = createArrayOfMatrixFromArray(
+            (int[]) {
+                2, -3,
+                4, 1,
+
+                1, 3,
+                -6, 0,
+
+                1, 1,
+                -4, -3,
+
+                2, 5,
+                3, 1
+            }, 4, 2, 2
+    );
+    printMatrixWithMinNorma(mats, 4);
+    freeMemMatrices(mats, 4);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -810,6 +854,9 @@ void test () {
     test_countZeroRows_hasHalfFullZeroRows();
     test_countZeroRows_noZeroRows();
     test_printMatrixWithMaxZeroRows();
+    test_getNorma_normaIsPositive();
+    test_getNorma_normaIsNegative();
+    test_printMatrixWithMinNorma();
 }
 
 int main() {
