@@ -93,3 +93,20 @@ int countEqClassesByRowsSum(matrix m) {
     qsort(sums_of_rows, m.nRows, sizeof(long long), cmp_long_long);
     return countNUnique(sums_of_rows, m.nRows);
 }
+
+//11. Возвращает количество элементов матрицы, которые больше суммы остальных элементов своего столбца
+int getNSpecialElement(matrix m) {
+    int counter_of_special = 0;
+    for (int col_ind = 0; col_ind < m.nCols; col_ind++) {
+        int cur_col_array[m.nRows];
+        for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
+            cur_col_array[row_ind] = m.values[row_ind][col_ind];
+        }
+        int max_col_element = getMax(cur_col_array, m.nRows);
+        long long col_sum = getSum(cur_col_array, m.nRows);
+        if (max_col_element > col_sum - max_col_element) {
+            counter_of_special += 1;
+        }
+    }
+    return counter_of_special;
+}

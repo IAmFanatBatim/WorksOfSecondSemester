@@ -555,6 +555,42 @@ void test_countEqClassesByRowsSum_allSame() {
     freeMemMatrix(&mat);
 }
 
+void test_getNSpecialElement_allMaxSpecial() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 4, 4,
+                    2, 9, 6, 7,
+                    12, 2, 1, 2
+            }, 3, 4
+    );
+    assert(getNSpecialElement(mat) == 4);
+    freeMemMatrix(&mat);
+}
+
+void test_getNSpecialElement_notAllMaxSpecial() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5, 4,
+                    2, 3, 6, 7,
+                    12, 2, 1, 2
+            }, 3, 4
+    );
+    assert(getNSpecialElement(mat) == 2);
+    freeMemMatrix(&mat);
+}
+
+void test_getNSpecialElement_noOneSpecial() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 5, 5, 3,
+                    2, 3, 6, 2,
+                    1, 2, 1, 2
+            }, 3, 4
+    );
+    assert(getNSpecialElement(mat) == 0);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -589,6 +625,9 @@ void test () {
     test_countEqClassesByRowsSum_allUnique();
     test_countEqClassesByRowsSum_notAllUnique();
     test_countEqClassesByRowsSum_allSame();
+    test_getNSpecialElement_allMaxSpecial();
+    test_getNSpecialElement_notAllMaxSpecial();
+    test_getNSpecialElement_noOneSpecial();
 }
 
 int main() {
