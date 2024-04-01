@@ -80,6 +80,22 @@ float getDistance(int *a, int n) {
     return sqrt(sqr_distance);
 }
 
+double getScalarProduct(int *a, int *b, int n) {
+    double scalar_product = 0;
+    for (int i = 0; i < n; i++) {
+        scalar_product += a[i]*b[i];
+    }
+    return scalar_product;
+}
+
+double getVectorLength(int *a, int n) {
+    return (double) getDistance(a, n);
+}
+
+double getCosine(int *a, int *b, int n) {
+    return (getScalarProduct(a, b, n)) / (getVectorLength(a, n) * getVectorLength(b, n));
+}
+
 int countNUnique(long long *a, int n) {
     int unique_counter = n;
     for (int i = 0; i < n-1; i++) {

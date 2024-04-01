@@ -820,6 +820,21 @@ void test_getNSpecialElement2_fullExample() {
     freeMemMatrix(&mat);
 }
 
+void test_getVectorIndexWithMaxAngle_fullExample() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    2, 3, 4,
+                    -2, 3, 5,
+                    -3, 0, 3,
+                    1, 2, 0,
+                    -4, -1, 2
+            }, 5, 3
+    );
+    int b[3] = {3, -1, 2};
+    assert(getVectorIndexWithMaxAngle(mat, b) == 4);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -870,6 +885,7 @@ void test () {
     test_getNorma_normaIsNegative();
     //test_printMatrixWithMinNorma();
     test_getNSpecialElement2_fullExample();
+    test_getVectorIndexWithMaxAngle_fullExample();
 }
 
 int main() {

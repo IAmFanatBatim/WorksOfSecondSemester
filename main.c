@@ -399,8 +399,8 @@ void test_selectionSortColsMatrixByColCriteria() {
             },
             2, 3, 3
     );
-    selectionSortColsMatrixByColCriteria(&mats[0], getSum);
-    selectionSortColsMatrixByColCriteria(&mats[1], getSum);
+    selectionSortColsMatrixByColCriteria(&mats[0], getSmallSum);
+    selectionSortColsMatrixByColCriteria(&mats[1], getSmallSum);
 
     assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
     assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));

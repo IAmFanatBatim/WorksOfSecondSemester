@@ -163,52 +163,6 @@ void printMatrixWithMinNorma(matrix *ms, int nMatrix) {
     }
 }
 
-//16. Возвращает количество таких элементов данной матрицы, что в строке слева от него
-//находятся только меньшие элементы, а справа – только бoльшие
-/*int getNSpecialElement2(matrix m) {
-    int counter_of_special = 0;
-    for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
-        int right_min_ind = 0;
-        int left_max_ind = 0;
-        int right_min = m.values[0][0];
-        int left_max = m.values[0][0];
-        for (int col_ind = 0; col_ind < m.nCols; col_ind++) {
-            if (m.values[row_ind][col_ind] >= left_max) {
-                left_max = m.values[row_ind][col_ind];
-                left_max_ind = col_ind;
-            } else if (m.values[row_ind][col_ind] < right_min) {
-                right_min = m.values[row_ind][col_ind];
-                right_min_ind = col_ind;
-            }
-        }
-        if (left_max_ind == m.nCols - 1) {
-            counter_of_special++;
-        }
-        if (right_min_ind == 0) {
-            counter_of_special++;
-        }
-        for (int cur_el_ind = right_min_ind + 1; cur_el_ind < left_max_ind; cur_el_ind++) {
-            int max_of_left_part, min_of_right_part;
-            if (cur_el_ind == 0) {
-                max_of_left_part = right_min;
-            } else {
-                max_of_left_part = getMax(m.values[row_ind], cur_el_ind);
-            }
-            if (m.nCols - cur_el_ind - 1 == 0) {
-                min_of_right_part = left_max;
-            } else {
-                min_of_right_part = getMin(m.values[row_ind] + cur_el_ind + 1, m.nCols - cur_el_ind - 1);
-            }
-            counter_of_special += m.values[row_ind][cur_el_ind] > max_of_left_part && m.values[row_ind][cur_el_ind] < min_of_right_part;
-            if(m.values[row_ind][cur_el_ind] > max_of_left_part && m.values[row_ind][cur_el_ind] < min_of_right_part) {
-                printf("@%d ", m.values[row_ind][cur_el_ind]);
-            }
-            //printf("%d ", m.values[row_ind][cur_el_ind]);
-        }
-    }
-    return counter_of_special;
-}*/
-
 int getNSpecialElement2(matrix m) {
     int counter_of_special = 0;
     for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
@@ -228,4 +182,17 @@ int getNSpecialElement2(matrix m) {
         }
     }
     return counter_of_special;
+}
+
+//17. Возвращает индекс строки матрицы m - вектора, имеющего наибольший угол с вектором - массивом b
+int getVectorIndexWithMaxAngle(matrix m, int *b) {
+    double min_cos = getCosine(m.values[0], b, m.nCols);
+    int index_of_min_cos = 0;
+    for (int row_ind = 1; row_ind < m.nRows; row_ind++) {
+        if (getCosine(m.values[row_ind], b, m.nCols) < min_cos) {
+            min_cos = getCosine(m.values[row_ind], b, m.nCols);
+            index_of_min_cos = row_ind;
+        }
+    }
+    return index_of_min_cos;
 }

@@ -84,14 +84,6 @@ void swapColumns(matrix *m, int j1, int j2) {
     }
 }
 
-/*void swapRowAdColumn(matrix *m, int i, int j) {
-    assert(i < m->nRows && j < m->nCols);
-    assert(isSquareMatrix(m));
-    for (int common_ind = 0; common_ind < m->nRows; common_ind++) {
-        swapVoid(&m->values[i][common_ind], &m->values[common_ind][j], sizeof(int));
-    }
-}*/
-
 void insertionSortRowsMatrixByRowCriteria(matrix *m, int (*criteria)(int*, int)) {
     int criteria_value[m->nRows];
     for (int i = 0; i < m->nRows; i++) {
