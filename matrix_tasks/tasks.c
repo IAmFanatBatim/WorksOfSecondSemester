@@ -6,7 +6,7 @@ void swapRowsWithMaxAndMinElement (matrix *m) {
     position max_pos = getMaxValuePos(*m);
     position min_pos = getMinValuePos(*m);
     swapRows(m, max_pos.rowIndex, min_pos.rowIndex);
-};
+}
 
 //2. Упорядочивает строки матрицы по неубыванию наибольших элементов строк
 void sortRowsByMaxElement(matrix *m) {
@@ -163,6 +163,7 @@ void printMatrixWithMinNorma(matrix *ms, int nMatrix) {
     }
 }
 
+//15. Возвращает количество в матрице таких элементов, что слева от них в столбце стоят только меньшие от них элементы, а справа - только большие
 int getNSpecialElement2(matrix m) {
     int counter_of_special = 0;
     for (int row_ind = 0; row_ind < m.nRows; row_ind++) {

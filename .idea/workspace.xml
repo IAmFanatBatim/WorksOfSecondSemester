@@ -24,11 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix_tasks/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/tasks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix_tasks/testing.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/testing.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,6 +211,7 @@
       <workItem from="1711950246581" duration="3788000" />
       <workItem from="1711963140808" duration="1132000" />
       <workItem from="1711964400802" duration="742000" />
+      <workItem from="1711965361477" duration="2526000" />
     </task>
     <servers />
   </component>
