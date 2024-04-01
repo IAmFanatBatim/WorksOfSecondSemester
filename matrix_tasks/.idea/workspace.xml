@@ -20,12 +20,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7411a0da-9c47-4296-b7f7-16bb7efaf848" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libs/algorithms/array/array.h" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/array/array.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.h" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/data_structures/matrix/matrix.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/../libs/algorithms/array/array.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.c" beforeDir="false" afterPath="$PROJECT_DIR$/testing.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testing.exe" beforeDir="false" afterPath="$PROJECT_DIR$/testing.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +110,8 @@
       <workItem from="1711961266879" duration="1808000" />
       <workItem from="1711964297468" duration="26000" />
       <workItem from="1711965169613" duration="114000" />
+      <workItem from="1711968308838" duration="55000" />
+      <workItem from="1711968469943" duration="11000" />
     </task>
     <servers />
   </component>
