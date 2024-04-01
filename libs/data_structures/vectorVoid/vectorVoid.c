@@ -2,7 +2,7 @@
 #define INC_VECTORVOID_C
 
 #include "vectorVoid.h"
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
+#include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\algorithms\math_basics\math_basics.c"
 #include <malloc.h>
 #include <memory.h>
 #include <stdio.h>

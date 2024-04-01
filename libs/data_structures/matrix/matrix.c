@@ -2,7 +2,7 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <assert.h>
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.c"
+#include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\algorithms\array\array.c"
 #ifndef INC_MATRIX_С
 #define INC_MATRIX_С
 

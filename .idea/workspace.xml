@@ -24,8 +24,36 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-54d4ddebf5cb97b5604a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-0906f98de940db3382e7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-33a9833e5b5794f13c5e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-03-20T16-11-32-0218.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/algorithms/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/algorithms/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/libs/data_structures/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/libs/data_structures/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/matrix/matrix.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/ordered_array_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/ordered_array_set/ordered_array_set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/unordered_array_set/unordered_array_set.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/unordered_array_set/unordered_array_set.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/vector/vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/vector/vector.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/vectorVoid/vectorVoid.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/vectorVoid/vectorVoid.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix_tasks/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/tasks.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matrix_tasks/testing.c" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/testing.c" afterDir="false" />
     </list>
@@ -76,6 +104,11 @@
 }</component>
   <component name="RunManager" selected="C/C++ File.main.c">
     <configuration name="WorksOfSecondSemester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorksOfSecondSemester" TARGET_NAME="WorksOfSecondSemester" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WorksOfSecondSemester" RUN_TARGET_NAME="WorksOfSecondSemester">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -209,6 +242,8 @@
       <workItem from="1711908058502" duration="597000" />
       <workItem from="1711910113262" duration="877000" />
       <workItem from="1711912120421" duration="797000" />
+      <workItem from="1711949745133" duration="484000" />
+      <workItem from="1711950246581" duration="3788000" />
     </task>
     <servers />
   </component>

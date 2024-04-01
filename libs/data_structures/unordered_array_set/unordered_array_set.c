@@ -2,7 +2,7 @@
 #define INC_UNORDERED_ARRAY_SET_C
 
 #include "unordered_array_set.h"
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\array\array.h"
+#include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\algorithms\array\array.h"
 
 unordered_array_set unordered_array_set_create (size_t capacity) {
     return (unordered_array_set) {malloc(sizeof(int) * capacity), 0, capacity};

@@ -364,8 +364,8 @@ void test_insertionSortRowsMatrixByRowCriteria() {
             },
             2, 3, 3
     );
-    insertionSortRowsMatrixByRowCriteria(&mats[0], getSum);
-    insertionSortRowsMatrixByRowCriteria(&mats[1], getSum);
+    insertionSortRowsMatrixByRowCriteria(&mats[0], getSmallSum);
+    insertionSortRowsMatrixByRowCriteria(&mats[1], getSmallSum);
 
     assert(areTwoMatricesEqual(&mats[0], &result_mats[0]));
     assert(areTwoMatricesEqual(&mats[1], &result_mats[1]));

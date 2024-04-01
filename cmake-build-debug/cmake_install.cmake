@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester
+# Install script for directory: C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/_")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/WorksOfSecondSemester")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/cmake-build-debug/libs/cmake_install.cmake")
+  include("C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/cmake-build-debug/libs/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

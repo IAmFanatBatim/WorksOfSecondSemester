@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester/cmake-build-debug"
+			"value" : "c:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester"
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/_"
+			"value" : "C:/Program Files (x86)/WorksOfSecondSemester"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester/cmake-build-debug"
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester/cmake-build-debug"
 		},
 		{
 			"name" : "WorksOfSecondSemester_IS_TOP_LEVEL",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester"
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
@@ -1156,42 +1156,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
-		},
-		{
-			"name" : "__BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester/cmake-build-debug"
-		},
-		{
-			"name" : "__IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "__SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/Users/\u0410\u043d\u043d\u0430/Desktop/\u0441\u043e\u043d\u0438\u043d\u044b \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/second_semester/WorksOfSecondSemester"
 		}
 	],
 	"kind" : "cache",

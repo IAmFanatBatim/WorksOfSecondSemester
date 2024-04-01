@@ -7,7 +7,7 @@
 #include <malloc.h>
 #include <assert.h>
 #include "array.h"
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\algorithms\math_basics\math_basics.c"
+#include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\algorithms\math_basics\math_basics.c"
 
 
 void swapVoid (void *a, void *b, int type_size) {
@@ -15,6 +15,14 @@ void swapVoid (void *a, void *b, int type_size) {
     memcpy(temp, a, type_size);
     memcpy(a, b, type_size);
     memcpy(b, temp, type_size);
+}
+
+int getSmallSum(int *a, int n) {
+    long long sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+    return sum;
 }
 
 long long getSum(int *a, int n) {

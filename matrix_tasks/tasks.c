@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\libs\data_structures\matrix\matrix.c"
+#include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\data_structures\matrix\matrix.c"
 
 //1. Меняет местами строки квадратной матрицы, в которых находятся максимальный и минимальный элементы
 void swapRowsWithMaxAndMinElement (matrix *m) {
@@ -148,7 +148,7 @@ void printMatrixWithMaxZeroRows(matrix *ms, int nMatrix) {
     }
 }
 
-//15. Выводит на экран матрицы из массива матриц, в которых число нулевых строк максимлаьно для этого массива
+//15. Выводит на экран матрицы из массива матриц, в которых число нулевых строк максимально для этого массива
 void printMatrixWithMinNorma(matrix *ms, int nMatrix) {
     int norma_for_every[nMatrix];
     for (int cur_mat_ind = 0; cur_mat_ind < nMatrix; cur_mat_ind++) {
@@ -161,4 +161,71 @@ void printMatrixWithMinNorma(matrix *ms, int nMatrix) {
             printf("\n");
         }
     }
+}
+
+//16. Возвращает количество таких элементов данной матрицы, что в строке слева от него
+//находятся только меньшие элементы, а справа – только бoльшие
+/*int getNSpecialElement2(matrix m) {
+    int counter_of_special = 0;
+    for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
+        int right_min_ind = 0;
+        int left_max_ind = 0;
+        int right_min = m.values[0][0];
+        int left_max = m.values[0][0];
+        for (int col_ind = 0; col_ind < m.nCols; col_ind++) {
+            if (m.values[row_ind][col_ind] >= left_max) {
+                left_max = m.values[row_ind][col_ind];
+                left_max_ind = col_ind;
+            } else if (m.values[row_ind][col_ind] < right_min) {
+                right_min = m.values[row_ind][col_ind];
+                right_min_ind = col_ind;
+            }
+        }
+        if (left_max_ind == m.nCols - 1) {
+            counter_of_special++;
+        }
+        if (right_min_ind == 0) {
+            counter_of_special++;
+        }
+        for (int cur_el_ind = right_min_ind + 1; cur_el_ind < left_max_ind; cur_el_ind++) {
+            int max_of_left_part, min_of_right_part;
+            if (cur_el_ind == 0) {
+                max_of_left_part = right_min;
+            } else {
+                max_of_left_part = getMax(m.values[row_ind], cur_el_ind);
+            }
+            if (m.nCols - cur_el_ind - 1 == 0) {
+                min_of_right_part = left_max;
+            } else {
+                min_of_right_part = getMin(m.values[row_ind] + cur_el_ind + 1, m.nCols - cur_el_ind - 1);
+            }
+            counter_of_special += m.values[row_ind][cur_el_ind] > max_of_left_part && m.values[row_ind][cur_el_ind] < min_of_right_part;
+            if(m.values[row_ind][cur_el_ind] > max_of_left_part && m.values[row_ind][cur_el_ind] < min_of_right_part) {
+                printf("@%d ", m.values[row_ind][cur_el_ind]);
+            }
+            //printf("%d ", m.values[row_ind][cur_el_ind]);
+        }
+    }
+    return counter_of_special;
+}*/
+
+int getNSpecialElement2(matrix m) {
+    int counter_of_special = 0;
+    for (int row_ind = 0; row_ind < m.nRows; row_ind++) {
+        for (int cur_el_ind = 0; cur_el_ind < m.nCols; cur_el_ind++) {
+            int max_of_left_part, min_of_right_part;
+            if (cur_el_ind == 0) {
+                max_of_left_part = m.values[row_ind][cur_el_ind] - 1;
+            } else {
+                max_of_left_part = getMax(m.values[row_ind], cur_el_ind);
+            }
+            if (m.nCols - cur_el_ind - 1 == 0) {
+                min_of_right_part =  m.values[row_ind][cur_el_ind] + 1;
+            } else {
+                min_of_right_part = getMin(m.values[row_ind] + cur_el_ind + 1, m.nCols - cur_el_ind - 1);
+            }
+            counter_of_special += m.values[row_ind][cur_el_ind] > max_of_left_part && m.values[row_ind][cur_el_ind] < min_of_right_part;
+        }
+    }
+    return counter_of_special;
 }

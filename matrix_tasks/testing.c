@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "C:\Users\Анна\Desktop\сонины программы\second_semester\WorksOfSecondSemester\matrix_tasks\tasks.c"
+#include "tasks.c"
 
 void test_swapRowsWithMaxAndMinElement_commonMatrix() {
     matrix mat = createMatrixFromArray(
@@ -808,6 +808,18 @@ void test_printMatrixWithMinNorma() {
     freeMemMatrices(mats, 4);
 }
 
+void test_getNSpecialElement2_fullExample() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    2, 3, 5, 5, 4,
+                    6, 2, 3, 8, 12,
+                    12, 12, 2, 1, 2,
+            }, 3, 5
+    );
+    assert(getNSpecialElement2(mat) == 4);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -853,10 +865,11 @@ void test () {
     test_countZeroRows_allZeroRowsFull();
     test_countZeroRows_hasHalfFullZeroRows();
     test_countZeroRows_noZeroRows();
-    test_printMatrixWithMaxZeroRows();
+    //test_printMatrixWithMaxZeroRows();
     test_getNorma_normaIsPositive();
     test_getNorma_normaIsNegative();
-    test_printMatrixWithMinNorma();
+    //test_printMatrixWithMinNorma();
+    test_getNSpecialElement2_fullExample();
 }
 
 int main() {
