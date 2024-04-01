@@ -319,4 +319,13 @@ int getNorma(matrix m) {
     return norma;
 }
 
+long long getScalarProductRowAndCol(matrix m, int i, int j) {
+    assert(isSquareMatrix(&m));
+    long long scalar_product = 0;
+    for (int common_ind = 0; common_ind < m.nRows; common_ind++) {
+        scalar_product += m.values[i][common_ind]*m.values[common_ind][j];
+    }
+    return scalar_product;
+}
+
 #endif

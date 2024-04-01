@@ -101,4 +101,7 @@ bool hasAllNonDescendingRows(matrix m);
 //возвращает количество строк в матрице m, полностью состоящих из нулей
 int countZeroRows(matrix m);
 
+//возвращает скалярное произведение строки i и столбца j в матрице m
+long long getScalarProductRowAndCol(matrix m, int i, int j);
+
 #endif

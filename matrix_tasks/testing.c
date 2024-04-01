@@ -835,6 +835,42 @@ void test_getVectorIndexWithMaxAngle_fullExample() {
     freeMemMatrix(&mat);
 }
 
+void test_getSpecialScalarProduct_minAndMaxInDifferentPlaces() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 4, 1,
+                    6, 2, 8,
+                    0, 5, 7
+            }, 3, 3
+    );
+    assert(getSpecialScalarProduct(mat) == 30);
+    freeMemMatrix(&mat);
+}
+
+void test_getSpecialScalarProduct_minAndMaxInOneRow() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    3, 4, 1,
+                    6, 2, 8,
+                    0, 9, 7
+            }, 3, 3
+    );
+    assert(getSpecialScalarProduct(mat) == 54);
+    freeMemMatrix(&mat);
+}
+
+void test_getSpecialScalarProduct_minAndMaxInOneCol() {
+    matrix mat = createMatrixFromArray(
+            (int[]) {
+                    9, 4, 1,
+                    6, 2, 8,
+                    0, 5, 7
+            }, 3, 3
+    );
+    assert(getSpecialScalarProduct(mat) == 105);
+    freeMemMatrix(&mat);
+}
+
 void test () {
     test_swapRowsWithMaxAndMinElement_commonMatrix();
     test_swapRowsWithMaxAndMinElement_MaxMinInOneRow();
@@ -886,6 +922,9 @@ void test () {
     //test_printMatrixWithMinNorma();
     test_getNSpecialElement2_fullExample();
     test_getVectorIndexWithMaxAngle_fullExample();
+    test_getSpecialScalarProduct_minAndMaxInDifferentPlaces();
+    test_getSpecialScalarProduct_minAndMaxInOneRow();
+    test_getSpecialScalarProduct_minAndMaxInOneCol();
 }
 
 int main() {

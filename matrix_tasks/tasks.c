@@ -196,3 +196,10 @@ int getVectorIndexWithMaxAngle(matrix m, int *b) {
     }
     return index_of_min_cos;
 }
+
+//18. Возвращает скалярное произведение строки, в которой находится наибольший элемент матрицы, на столбец с наименьшим элементом в матрице m
+long long getSpecialScalarProduct(matrix m) {
+    position pos_of_min = getMinValuePos(m);
+    position pos_of_max = getMaxValuePos(m);
+    return getScalarProductRowAndCol(m, pos_of_max.rowIndex, pos_of_min.colIndex);
+}
