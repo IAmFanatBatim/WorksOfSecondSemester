@@ -1,0 +1,5 @@
+# ninja log v5
+1	161	7378491850343666	CMakeFiles/string_predicates.dir/string_predicates.c.obj	b364a13d5b666fdb
+162	352	7378491852128878	string_predicates.exe	aaf3c9169681d082
+2	202	7378492577368945	CMakeFiles/string_predicates.dir/string_predicates.c.obj	b364a13d5b666fdb
+203	388	7378492579084352	string_predicates.exe	aaf3c9169681d082
