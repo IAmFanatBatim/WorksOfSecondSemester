@@ -47,7 +47,7 @@ void test_find_cutSearchArea() {
 }
 void test_find_emptySearchArea() {
     char *s = "Hello!";
-    assert(find(s, s+1, 'H') == s+1);
+    assert(find(s, s, 'H') == s);
 }
 void test_find() {
     test_find_oneInclusion();
@@ -67,11 +67,11 @@ void test_findNonSpace_foundWithSpaceCharactersBefore() {
 }
 void test_findNonSpace_notFound() {
     char *s = "\t \n\r";
-    assert(findNonSpace(s) == s);
+    assert(findNonSpace(s) == s+4);
 }
 void test_findNonSpace_emptySearchArea() {
     char *s = "Hello!";
-    assert(findNonSpace(s) == s+1);
+    assert(findNonSpace(s) == s);
 }
 void test_findNonSpace() {
     test_findNonSpace_foundWithSpaceBefore();
@@ -81,20 +81,20 @@ void test_findNonSpace() {
 }
 
 void test_findSpace_foundSpace() {
-    char *s = "  Hello!";
-    assert(findSpace(s) == s+2);
+    char *s = "H e l l o !\t";
+    assert(findSpace(s) == s+1);
 }
 void test_findSpace_foundSpaceCharacter() {
-    char *s = "\t \nHello!";
-    assert(findSpace(s) == s+3);
+    char *s = "Hello!\t";
+    assert(findSpace(s) == s+6);
 }
 void test_findSpace_notFound() {
-    char *s = "\t \n\r";
-    assert(findSpace(s) == s);
+    char *s = "Hello!";
+    assert(findSpace(s) == s+6);
 }
 void test_findSpace_emptySearchArea() {
-    char *s = "Hello!";
-    assert(findSpace(s) == s+1);
+    char *s = "";
+    assert(findSpace(s) == s);
 }
 void test_findSpace() {
     test_findSpace_foundSpace();
@@ -117,7 +117,7 @@ void test_findNonSpaceReverse_notFound() {
 }
 void test_findNonSpaceReverse_cutSearchArea() {
     char *s = "Hello!\t\n";
-    assert(findNonSpaceReverse(s+strlen_(s)-1, s+3) == s+3);
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s+5) == s+5);
 }
 void test_findNonSpaceReverse_emptySearchArea() {
     char *s = "";
@@ -163,6 +163,7 @@ void test() {
     test_strlen_();
     test_find();
     test_findNonSpace();
+    test_findSpace();
     test_findNonSpaceReverse();
     test_findSpaceReverse();
 }
