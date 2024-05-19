@@ -7,3 +7,16 @@ add_library(data_structures
 	matrix/matrix.c
 )
 target_link_libraries(data_structures algorithms)
+
+add_library(data_structures string/string_.h string/string_.c
+		# string/tasks/digitToStartTransform.h
+	# string/tasks/reverseWords.h
+	# string/tasks/replaceDigitsBySpaces.h
+	# ...
+	# < файл с решением задачи >
+	# ...
+	# string/tasks/hasPairOfWordsWithEqualLetterSet.h
+	# string/tasks/printWordsNonEqualLastWord.h
+)
+
+target_link_libraries(project string)

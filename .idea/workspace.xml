@@ -24,8 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eefbd791-8499-42e0-b467-d4f7b7053589" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/algorithms/array/array.c" beforeDir="false" afterPath="$PROJECT_DIR$/libs/algorithms/array/array.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_tasks/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/libs/data_structures/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +75,11 @@
 }</component>
   <component name="RunManager" selected="C/C++ File.main.c">
     <configuration name="WorksOfSecondSemester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WorksOfSecondSemester" TARGET_NAME="WorksOfSecondSemester" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="WorksOfSecondSemester" RUN_TARGET_NAME="WorksOfSecondSemester">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -213,6 +219,8 @@
       <workItem from="1711964400802" duration="742000" />
       <workItem from="1711965361477" duration="2526000" />
       <workItem from="1711968375304" duration="83000" />
+      <workItem from="1716116990570" duration="874000" />
+      <workItem from="1716118143073" duration="87000" />
     </task>
     <servers />
   </component>
