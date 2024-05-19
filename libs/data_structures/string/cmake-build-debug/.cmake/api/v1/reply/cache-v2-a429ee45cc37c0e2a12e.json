@@ -731,7 +731,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "string"
+			"value" : "string_"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1147,6 +1147,42 @@
 		},
 		{
 			"name" : "string_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester/libs/data_structures/string"
+		},
+		{
+			"name" : "string__BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "C:/Users/sovac/Desktop/\u041e\u041f, \u043f\u0440\u0435\u0438\u043c\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e \u043b\u0430\u0431\u044b/second_semester/libs/data_structures/string/cmake-build-debug"
+		},
+		{
+			"name" : "string__IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "string__SOURCE_DIR",
 			"properties" : 
 			[
 				{

@@ -1,22 +1,43 @@
-#ifndef INC_STRING__C
-#define INC_STRING__C
-#include "string_.h"
+#include "string_.c"
+#include "assert.h"
 
-size_t strlen_(const char *begin) {
-    char *end = begin;
-    while (*end != '\0')
-        end++;
-    return end - begin;
+void strlen_test_commonString() {
+    char *s = "Hello!";
+    assert(strlen_(s) == 6);
 }
 
-#endif
+void strlen_test_hasControlCharacters() {
+    char *s = "\t\"Hello!\"";
+    assert(strlen_(s) == 9);
+}
+
+void strlen_test_hasEscapingCharacters() {
+    char *s = "\\tHello!\\t";
+    assert(strlen_(s) == 10);
+}
+
+void strlen_test_moreMemoryThanNeed() {
+    char s[14] = "Hello!";
+    assert(strlen_(s) == 6);
+}
+
+void strlen_test_emptyString() {
+    char s[14] = "Hello!";
+    assert(strlen_(s) == 6);
+}
+
+void strlen_test() {
+    strlen_test_commonString();
+    strlen_test_hasControlCharacters();
+    strlen_test_hasEscapingCharacters();
+    strlen_test_moreMemoryThanNeed();
+    strlen_test_emptyString();
+}
+
+void string_test() {
+    strlen_test();
+}
 
 int main () {
-    char *s1 = "Hello!";
-    char *s2 = "\tHello!\b";
-    char s3[14] = "Hello!";
-    char *s4 = "";
-    printf("%llu %llu %llu %llu \n", strlen_(s1), strlen_(s2), strlen_(s3), strlen_(s4));
-    printf("World Hel\blo!");
-    return 0;
+    string_test();
 }
