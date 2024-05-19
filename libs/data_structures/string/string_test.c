@@ -181,7 +181,7 @@ void test_strcmp_lhsEarlierCutOff() {
 }
 void test_strcmp_lhsLaterCutOff() {
     char *lhs = "Hello World!";
-    char *rhs = "Hello World!";
+    char *rhs = "Hell";
     assert(strcmp(lhs, rhs) == 111);
 }
 void test_strcmp() {
@@ -205,6 +205,5 @@ void test() {
 int main () {
     test();
     printf("All is okay\n");
-    printf("%d", 'o');
     return 0;
 }
