@@ -159,6 +159,39 @@ void test_findSpaceReverse() {
     test_findSpaceReverse_emptySearchArea();
 }
 
+void test_strcmp_areEqual() {
+    char *lhs = "Hello World!";
+    char *rhs = "Hello World!";
+    assert(strcmp(lhs, rhs) == 0);
+}
+void test_strcmp_lhsEarlierInHalf() {
+    char *lhs = "Hello World!";
+    char *rhs = "Hi World!";
+    assert(strcmp(lhs, rhs) == -4);
+}
+void test_strcmp_lhsLaterInHalf() {
+    char *lhs = "Hello World!";
+    char *rhs = "Goodbye World!";
+    assert(strcmp(lhs, rhs) == 1);
+}
+void test_strcmp_lhsEarlierCutOff() {
+    char *lhs = "Hell";
+    char *rhs = "Hello World!";
+    assert(strcmp(lhs, rhs) == -111);
+}
+void test_strcmp_lhsLaterCutOff() {
+    char *lhs = "Hello World!";
+    char *rhs = "Hello World!";
+    assert(strcmp(lhs, rhs) == 111);
+}
+void test_strcmp() {
+    test_strcmp_areEqual();
+    test_strcmp_lhsEarlierInHalf();
+    test_strcmp_lhsLaterInHalf();
+    test_strcmp_lhsEarlierCutOff();
+    test_strcmp_lhsLaterCutOff();
+}
+
 void test() {
     test_strlen_();
     test_find();
@@ -166,10 +199,12 @@ void test() {
     test_findSpace();
     test_findNonSpaceReverse();
     test_findSpaceReverse();
+    test_strcmp();
 }
 
 int main () {
     test();
-    printf("All is okay");
+    printf("All is okay\n");
+    printf("%d", 'o');
     return 0;
 }
