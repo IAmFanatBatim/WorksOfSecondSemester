@@ -29,8 +29,142 @@ void test_strlen_() {
     test_strlen_emptyString();
 }
 
+void test_find_oneInclusion() {
+    char *s = "Hello!";
+    assert(find(s, s+strlen_(s), 'e') == s+1);
+}
+void test_find_severalInclusions() {
+    char *s = "Hello!";
+    assert(find(s, s+strlen_(s), 'l') == s+2);
+}
+void test_find_noInclusions() {
+    char *s = "Hello!";
+    assert(find(s, s+strlen_(s), 'a') == s+6);
+}
+void test_find_cutSearchArea() {
+    char *s = "Hello!";
+    assert(find(s, s+strlen_(s)-3, 'o') == s+3);
+}
+void test_find_emptySearchArea() {
+    char *s = "Hello!";
+    assert(find(s, s+1, 'H') == s+1);
+}
+void test_find() {
+    test_find_oneInclusion();
+    test_find_severalInclusions();
+    test_find_noInclusions();
+    test_find_cutSearchArea();
+    test_find_emptySearchArea();
+}
+
+void test_findNonSpace_foundWithSpaceBefore() {
+    char *s = "  Hello!";
+    assert(findNonSpace(s) == s+2);
+}
+void test_findNonSpace_foundWithSpaceCharactersBefore() {
+    char *s = "\t \nHello!";
+    assert(findNonSpace(s) == s+3);
+}
+void test_findNonSpace_notFound() {
+    char *s = "\t \n\r";
+    assert(findNonSpace(s) == s);
+}
+void test_findNonSpace_emptySearchArea() {
+    char *s = "Hello!";
+    assert(findNonSpace(s) == s+1);
+}
+void test_findNonSpace() {
+    test_findNonSpace_foundWithSpaceBefore();
+    test_findNonSpace_foundWithSpaceCharactersBefore();
+    test_findNonSpace_notFound();
+    test_findNonSpace_emptySearchArea();
+}
+
+void test_findSpace_foundSpace() {
+    char *s = "  Hello!";
+    assert(findSpace(s) == s+2);
+}
+void test_findSpace_foundSpaceCharacter() {
+    char *s = "\t \nHello!";
+    assert(findSpace(s) == s+3);
+}
+void test_findSpace_notFound() {
+    char *s = "\t \n\r";
+    assert(findSpace(s) == s);
+}
+void test_findSpace_emptySearchArea() {
+    char *s = "Hello!";
+    assert(findSpace(s) == s+1);
+}
+void test_findSpace() {
+    test_findSpace_foundSpace();
+    test_findSpace_foundSpaceCharacter();
+    test_findSpace_notFound();
+    test_findSpace_emptySearchArea();
+}
+
+void test_findNonSpaceReverse_foundWithSpaceBefore() {
+    char *s = "Hello!  ";
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s-1) == s+5);
+}
+void test_findNonSpaceReverse_foundWithSpaceCharactersBefore() {
+    char *s = "Hello!\t\n";
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s-1) == s+5);
+}
+void test_findNonSpaceReverse_notFound() {
+    char *s = "\t \n\r";
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s-1) == s-1);
+}
+void test_findNonSpaceReverse_cutSearchArea() {
+    char *s = "Hello!\t\n";
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s+3) == s+3);
+}
+void test_findNonSpaceReverse_emptySearchArea() {
+    char *s = "";
+    assert(findNonSpaceReverse(s+strlen_(s)-1, s-1) == s-1);
+}
+void test_findNonSpaceReverse() {
+    test_findNonSpaceReverse_foundWithSpaceBefore();
+    test_findNonSpaceReverse_foundWithSpaceCharactersBefore();
+    test_findNonSpaceReverse_notFound();
+    test_findNonSpaceReverse_cutSearchArea();
+    test_findNonSpaceReverse_emptySearchArea();
+}
+
+void test_findSpaceReverse_foundSpace() {
+    char *s = "Hello World!";
+    assert(findSpaceReverse(s+strlen_(s)-1, s-1) == s+5);
+}
+void test_findSpaceReverse_foundSpaceCharacter() {
+    char *s = "Hello\tWorld!";
+    assert(findSpaceReverse(s+strlen_(s)-1, s-1) == s+5);
+}
+void test_findSpaceReverse_notFound() {
+    char *s = "Hello!";
+    assert(findSpaceReverse(s+strlen_(s)-1, s-1) == s-1);
+}
+void test_findSpaceReverse_cutSearchArea() {
+    char *s = "Hello World!";
+    assert(findSpaceReverse(s+strlen_(s)-1, s+7) == s+7);
+}
+void test_findSpaceReverse_emptySearchArea() {
+    char *s = "";
+    assert(findSpaceReverse(s+strlen_(s)-1, s-1) == s-1);
+}
+void test_findSpaceReverse() {
+    test_findSpaceReverse_foundSpace();
+    test_findSpaceReverse_foundSpaceCharacter();
+    test_findSpaceReverse_notFound();
+    test_findSpaceReverse_cutSearchArea();
+    test_findSpaceReverse_emptySearchArea();
+}
+
 void test() {
     test_strlen_();
+    test_find();
+    test_findNonSpace();
+    test_findNonSpaceReverse();
+    test_findSpaceReverse();
 }
 
 int main () {
