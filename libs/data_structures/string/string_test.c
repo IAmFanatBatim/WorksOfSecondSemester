@@ -1,43 +1,40 @@
 #include "string_.c"
 #include "assert.h"
 
-void strlen_test_commonString() {
+void test_strlen_commonString() {
     char *s = "Hello!";
     assert(strlen_(s) == 6);
 }
-
-void strlen_test_hasControlCharacters() {
+void test_strlen_hasControlCharacters() {
     char *s = "\t\"Hello!\"";
     assert(strlen_(s) == 9);
 }
-
-void strlen_test_hasEscapingCharacters() {
+void test_strlen_hasEscapingCharacters() {
     char *s = "\\tHello!\\t";
     assert(strlen_(s) == 10);
 }
-
-void strlen_test_moreMemoryThanNeed() {
+void test_strlen_moreMemoryThanNeed() {
     char s[14] = "Hello!";
     assert(strlen_(s) == 6);
 }
-
-void strlen_test_emptyString() {
+void test_strlen_emptyString() {
     char s[14] = "Hello!";
     assert(strlen_(s) == 6);
 }
-
-void strlen_test() {
-    strlen_test_commonString();
-    strlen_test_hasControlCharacters();
-    strlen_test_hasEscapingCharacters();
-    strlen_test_moreMemoryThanNeed();
-    strlen_test_emptyString();
+void test_strlen_() {
+    test_strlen_commonString();
+    test_strlen_hasControlCharacters();
+    test_strlen_hasEscapingCharacters();
+    test_strlen_moreMemoryThanNeed();
+    test_strlen_emptyString();
 }
 
-void string_test() {
-    strlen_test();
+void test() {
+    test_strlen_();
 }
 
 int main () {
-    string_test();
+    test();
+    printf("All is okay");
+    return 0;
 }

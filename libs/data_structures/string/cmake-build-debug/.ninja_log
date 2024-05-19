@@ -1,3 +1,5 @@
 # ninja log v5
 1	132	7377651843466482	CMakeFiles/string.dir/string_.c.obj	5b3bfe94fc67adfc
 132	289	7377651844892664	string.exe	8e53fbbcb6b94a46
+1	268	7378289211156050	CMakeFiles/string_.dir/string_.c.obj	5624647d8a8b5756
+270	652	7378289215205179	libstring_.a	6f96bb8d6e406f46
