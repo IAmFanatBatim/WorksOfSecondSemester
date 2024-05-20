@@ -1,5 +1,5 @@
 #include "string_.c"
-#include "assert.h"
+#include <assert.h>
 #include "string_predicates/string_predicates.c"
 
 void test_strlen_commonString() {
@@ -196,25 +196,25 @@ void test_strcmp() {
 void test_copy_fullString() {
     char *s = "Hello World!";
     char *s_expected = "Hello World!";
-    char *s_dest;
+    char s_dest[13];
     char *final_dest = copy(s, s + strlen_(s), s_dest);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 12);
 }
 void test_copy_partString() {
     char *s = "Hello World!";
     char *s_expected = "Hello";
-    char *s_dest;
+    char s_dest[6];
     char *final_dest = copy(s, s + 5, s_dest);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 5);
 }
 void test_copy_emptyString() {
     char *s = "Hello World!";
     char *s_expected = "";
-    char *s_dest;
+    char s_dest[1];
     char *final_dest = copy(s, s, s_dest);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest);
 }
 void test_copy() {
@@ -226,33 +226,33 @@ void test_copy() {
 void test_copyIf_partSatisfying() {
     char *s = "Hello World!";
     char *s_expected = "HW";
-    char *s_dest;
+    char s_dest[3];
     char *final_dest = copyIf(s, s + strlen_(s), s_dest, isCapitalLetter);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 2);
 }
 void test_copyIf_noSatisfying() {
     char *s = "Hello World!";
     char *s_expected = "";
-    char *s_dest;
+    char s_dest[1];
     char *final_dest = copyIf(s, s + strlen_(s), s_dest, isNumberChar);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest);
 }
 void test_copyIf_cutOffCopyArea() {
     char *s = "Hello World!";
     char *s_expected = "eo";
-    char *s_dest;
+    char s_dest[3];
     char *final_dest = copyIf(s, s + 5, s_dest, isVowel);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 2);
 }
 void test_copyIf_emptyCopyArea() {
     char *s = "Hello World!";
     char *s_expected = "";
-    char *s_dest;
+    char s_dest[1];
     char *final_dest = copyIf(s, s, s_dest, isspace);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest);
 }
 void test_copyIf() {
@@ -265,33 +265,33 @@ void test_copyIf() {
 void test_copyIfReverse_partSatisfying() {
     char *s = "Hello World!";
     char *s_expected = "WH";
-    char *s_dest;
+    char s_dest[3];
     char *final_dest = copyIfReverse(s+strlen_(s)-1, s-1, s_dest, isCapitalLetter);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 2);
 }
 void test_copyIfReverse_noSatisfying() {
     char *s = "Hello World!";
     char *s_expected = "";
-    char *s_dest;
+    char s_dest[1];
     char *final_dest = copyIfReverse(s+strlen_(s)-1, s-1, s_dest, isNumberChar);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest);
 }
 void test_copyIfReverse_cutOffCopyArea() {
     char *s = "Hello World!";
     char *s_expected = "o";
-    char *s_dest;
+    char s_dest[2];
     char *final_dest = copyIfReverse(s+strlen_(s)-1, s+6, s_dest, isVowel);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest + 1);
 }
 void test_copyIfReverse_emptyCopyArea() {
     char *s = "Hello World!";
     char *s_expected = "";
-    char *s_dest;
+    char s_dest[1];
     char *final_dest = copyIfReverse(s, s, s_dest, isspace);
-    assert(strcmp(s_expected, s_dest));
+    assert(strcmp(s_expected, s_dest) == 0);
     assert(final_dest == s_dest);
 }
 void test_copyIfReverse() {

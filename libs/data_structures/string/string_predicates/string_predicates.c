@@ -1,7 +1,6 @@
 #ifndef INC_STRING_PREDICATES_C
 #define INC_STRING_PREDICATES_C
 #include "string_predicates.h"
-#include <ctype.h>
 
 int isCapitalLetter(int ch) {
     return (ch >= 'A') && (ch <= 'Z');
