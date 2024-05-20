@@ -3,6 +3,7 @@
 #include "string_.h"
 #include <ctype.h>
 #include <memory.h>
+#include <assert.h>
 
 size_t strlen_(const char *begin) {
     char *end = begin;
@@ -12,6 +13,7 @@ size_t strlen_(const char *begin) {
 }
 
 char* find(char *begin, char *end, int ch) {
+    assert(begin <= end);
     while (begin != end && *begin != ch) {
         begin++;
     }
@@ -33,6 +35,7 @@ char* findSpace(char *begin) {
 }
 
 char* findNonSpaceReverse(char *rbegin, const char *rend) {
+    assert(rbegin >= rend);
     while (rbegin != rend && isspace(*rbegin)) {
         rbegin--;
     }
@@ -40,6 +43,7 @@ char* findNonSpaceReverse(char *rbegin, const char *rend) {
 }
 
 char* findSpaceReverse(char *rbegin, const char *rend) {
+    assert(rbegin >= rend);
     while (rbegin != rend && !isspace(*rbegin)) {
         rbegin--;
     }
@@ -55,14 +59,16 @@ int strcmp(const char *lhs, const char *rhs) {
 }
 
 char* copy(const char *beginSource, const char *endSource, char *beginDestination) {
+    assert(beginSource <= endSource);
     memcpy(beginDestination, beginSource, (endSource - beginSource)*sizeof(char));
     return beginDestination + (endSource - beginSource);
 }
 
 char* copyIf(char *beginSource, const char *endSource, char *beginDestination, int (*f)(int)) {
+    assert(beginSource <= endSource);
     while (beginSource != endSource) {
         if (f(*beginSource)) {
-            memcpy(beginDestination, beginSource, sizeof(char));
+            *beginDestination = *beginSource;
             beginDestination++;
         }
         beginSource++;
@@ -71,9 +77,10 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
 }
 
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int)) {
+    assert(rbeginSource >= rendSource);
     while (rbeginSource != rendSource) {
         if (f(*rbeginSource)) {
-            memcpy(beginDestination, rbeginSource, sizeof(char));
+            *beginDestination = *rbeginSource;
             beginDestination++;
         }
         rbeginSource--;
