@@ -1,8 +1,7 @@
 #include <ctype.h>
 #include "string_support_functions.c"
-#define assertString(expected, got) assertString(expected, got, __FILE__, __FUNCTION__, __LINE__)
 
-//Удаляет из строки s все пробельные символы
+//Оставляет только один символ в каждой последовательности подряд идущих одинаковых символов в строке s
 void removeAdjacentEqualLetters(char *s);
 
 void test_removeAdjacentEqualLetters_empty() {
@@ -43,7 +42,6 @@ void test_removeAdjacentEqualLetters() {
     test_removeAdjacentEqualLetters_chainsWithInterval();
 }
 
-//Удаляет из строки s все пробельные символы
 void removeAdjacentEqualLetters(char *s) {
     char *pointer_by_written = s;
     char *endSource = getEndOfString(s);

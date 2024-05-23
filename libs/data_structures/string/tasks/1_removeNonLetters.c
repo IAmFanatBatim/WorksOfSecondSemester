@@ -1,6 +1,5 @@
 #include <ctype.h>
 #include "string_support_functions.c"
-#define assertString(expected, got) assertString(expected, got, __FILE__, __FUNCTION__, __LINE__)
 
 //Удаляет из строки s все пробельные символы
 void removeNonLetters(char *s);
