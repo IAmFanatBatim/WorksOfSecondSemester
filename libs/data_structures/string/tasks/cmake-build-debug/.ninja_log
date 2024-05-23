@@ -1,5 +1,5 @@
 # ninja log v5
-21	242	7381099937730284	CMakeFiles/tasks.dir/string_support_functions.c.obj	998fdd68f90e52f5
-2	135	7381100459076271	CMakeFiles/tasks.dir/string_support_functions.c.obj	998fdd68f90e52f5
-2	167	7381101101747870	CMakeFiles/tasks.dir/removeNonLetters.c.obj	b117f6ff1a5f898
-22	174	7381101101837632	CMakeFiles/tasks.dir/string_support_functions.c.obj	998fdd68f90e52f5
+16	127	7381502354266432	CMakeFiles/tasks.dir/string_support_functions.c.obj	998fdd68f90e52f5
+2	117	7381502354156730	CMakeFiles/tasks.dir/removeNonLetters.c.obj	b117f6ff1a5f898
+4	162	7381563234185189	CMakeFiles/tasks.dir/removeNonLetters.c.obj	b117f6ff1a5f898
+163	297	7381563235511642	tasks.exe	9406338016094b8a

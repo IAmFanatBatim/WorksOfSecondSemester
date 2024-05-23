@@ -10,3 +10,10 @@ void assertString(const char *expected, char *got, char const *fileName, char co
         fprintf(stderr, "%s - OK\n", funcName);
 }
 
+char* getEndOfString(char *s) {
+    while (*s != '\0') {
+        s++;
+    }
+    return s;
+}
+
