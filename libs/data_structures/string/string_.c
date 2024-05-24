@@ -5,6 +5,7 @@
 #include <memory.h>
 #include <assert.h>
 
+
 size_t strlen_(const char *begin) {
     char *end = begin;
     while (*end != '\0')

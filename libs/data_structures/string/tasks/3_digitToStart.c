@@ -12,7 +12,7 @@ void test_digitToStart_empty() {
     assertString(s, s_expected);
 }
 void test_digitToStart_noWords() {
-    char s[] = "\t\n";
+    char s[] = "\t \n";
     char *s_expected = "\t \n";
     digitToStart(s);
     assertString(s_expected, s);
@@ -24,7 +24,7 @@ void test_digitToStart_oneWord() {
     assertString(s_expected, s);
 }
 void test_digitToStart_diverseWords() {
-    char s[] = "my,s7r0ng\tp4ssw0rd 1234";
+    char s[] = "my s7r0ng\tp4ssw0rd 1234";
     char *s_expected = "my 07srng\t04psswrd 4321";
     digitToStart(s);
     assertString(s_expected, s);
@@ -37,6 +37,15 @@ void test_digitToStart() {
     test_digitToStart_diverseWords();
 }
 
+void digitToStart(char *s) {
+    WordDescriptor word;
+    while (getWord(s, &word)) {
+        char *endStringBuffer = copy(word.begin, word.end,_stringBuffer);
+        char *recPosition = copyIfReverse(endStringBuffer - 1,_stringBuffer - 1,word.begin, isdigit);
+        copyIf(_stringBuffer, endStringBuffer, recPosition, isalpha);
+        s = word.end;
+    }
+}
 
 int main() {
     test_digitToStart();

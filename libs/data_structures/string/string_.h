@@ -4,6 +4,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <string.h>
+
+#define MAX_STRING_SIZE 1000
+char _stringBuffer[MAX_STRING_SIZE + 1];
 
 //Возвращает количество символов в строке, нулевой символ которой находится по указателю begin
 size_t strlen_(const char *begin);

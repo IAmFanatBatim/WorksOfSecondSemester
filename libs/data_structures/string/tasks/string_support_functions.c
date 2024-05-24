@@ -22,3 +22,18 @@ char* getEndOfString(char *s) {
     return s;
 }
 
+//Структура, описывающая положение слова в строке
+typedef struct {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа
+} WordDescriptor;
+
+//Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного после указателя beginSearch
+//Если был встречен ноль-символ, а слово не было считано, возвращает 0
+int getWord(char *beginSearch, WordDescriptor *word) {
+    word->begin = findNonSpace(beginSearch);
+    if (*word->begin == '\0')
+        return 0;
+    word->end = findSpace(word->begin);
+    return 1;
+}
