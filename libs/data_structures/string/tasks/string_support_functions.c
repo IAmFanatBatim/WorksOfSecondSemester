@@ -30,10 +30,24 @@ typedef struct {
 
 //Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного после указателя beginSearch
 //Если был встречен ноль-символ, а слово не было считано, возвращает 0
-int getWord(char *beginSearch, WordDescriptor *word) {
+bool getWord(char *beginSearch, WordDescriptor *word) {
     word->begin = findNonSpace(beginSearch);
     if (*word->begin == '\0')
         return 0;
     word->end = findSpace(word->begin);
+    return 1;
+}
+
+//Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного до указателя rbegin,
+//но не выходящего за рамки левой границы rend; если слово не было считано, возвращает 0
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
+    word->end = findSpaceReverse(rbegin, rend);
+    char *first_letter = findNonSpaceReverse(word->end - 1, rend);
+    if (first_letter == rend) {
+        return 0;
+    }
+    word->begin = findSpaceReverse(first_letter, rend);
+    word->end++;
+    word->begin++;
     return 1;
 }

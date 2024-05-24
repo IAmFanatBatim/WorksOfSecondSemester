@@ -4,6 +4,8 @@
 //Оставляет только один символ в каждой последовательности подряд идущих одинаковых символов в строке s
 void removeAdjacentEqualLetters(char *s);
 
+//<Автоматизированные тесты>
+
 void test_removeAdjacentEqualLetters_empty() {
     char s[] = "";
     char *s_expected = "";

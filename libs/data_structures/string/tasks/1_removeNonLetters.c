@@ -4,6 +4,8 @@
 //Удаляет из строки s все пробельные символы
 void removeNonLetters(char *s);
 
+//<Автоматизированные тесты>
+
 void test_removeNonLetters_diverse() {
     char s[] = "You cried for help \n\t - but nobody came";
     char *s_expected = "Youcriedforhelp-butnobodycame";

@@ -5,6 +5,8 @@
 //а буквы – в конец слова, без изменения порядка следования.
 void digitToStart(char *s);
 
+//<Автоматизированные тесты>
+
 void test_digitToStart_empty() {
     char s[] = "";
     char *s_expected = "";
@@ -29,7 +31,6 @@ void test_digitToStart_diverseWords() {
     digitToStart(s);
     assertString(s_expected, s);
 }
-
 void test_digitToStart() {
     test_digitToStart_empty();
     test_digitToStart_noWords();
@@ -40,7 +41,7 @@ void test_digitToStart() {
 void digitToStart(char *s) {
     WordDescriptor word;
     while (getWord(s, &word)) {
-        char *endStringBuffer = copy(word.begin, word.end,_stringBuffer);
+        char *endStringBuffer = copy(word.begin, word.end, _stringBuffer);
         char *recPosition = copyIfReverse(endStringBuffer - 1,_stringBuffer - 1,word.begin, isdigit);
         copyIf(_stringBuffer, endStringBuffer, recPosition, isalpha);
         s = word.end;
