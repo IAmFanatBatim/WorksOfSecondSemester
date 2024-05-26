@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/algorithms/array
+# Install script for directory: C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/array
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Анна/Desktop/сонины программы/second_semester/WorksOfSecondSemester/libs/algorithms/array/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/array/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

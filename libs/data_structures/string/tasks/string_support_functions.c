@@ -51,3 +51,21 @@ bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word) {
     word->begin++;
     return 1;
 }
+
+//Возвращает отрицательное значение, если слово w1 располагается до w2 в лексикографическом порядке (как в словаре),
+//значение 0, если они равны, иначе – положительное значение.
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
+    size_t w1Size = w1.end - w1.begin;
+    size_t w2Size = w2.end - w2.begin;
+    size_t min_size = (w1Size < w2Size) ? w1Size : w2Size;
+    int result = memcmp(w1.begin, w2.begin, (min_size)*sizeof(char));
+    if (result != 0) {
+        return result;
+    } else if (w1Size > w2Size) {
+        return *(w1.begin + min_size);
+    } else if (w1Size < w2Size) {
+        return -*(w2.begin + min_size);
+    } else {
+        return 0;
+    }
+}
