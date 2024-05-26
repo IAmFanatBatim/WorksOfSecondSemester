@@ -3,7 +3,7 @@
 #include <malloc.h>
 #include "string_support_functions.c"
 
-//преобразовывает строку, заменяя каждую цифру соответствующим ей числом пробелов.
+//заменяет в строке s все отдельные слова w1 на слова w2
 void replace(char *source, char *w1, char *w2);
 
 //<Автоматизированные тесты>

@@ -2,7 +2,7 @@
 #include <malloc.h>
 #include "string_support_functions.c"
 
-//преобразовывает строку, заменяя каждую цифру соответствующим ей числом пробелов.
+//выводит на экран слова строки в обратном порядке, по одному на строку вывода
 void printWordsReversedOrder(char *s);
 
 void printWordsReversedOrder(char *s) {
