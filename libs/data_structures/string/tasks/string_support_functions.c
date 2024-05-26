@@ -22,12 +22,6 @@ char* getEndOfString(char *s) {
     return s;
 }
 
-//Структура, описывающая положение слова в строке
-typedef struct {
-    char *begin; // позиция начала слова
-    char *end; // позиция первого символа, после последнего символа
-} WordDescriptor;
-
 //Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного после указателя beginSearch
 //Если был встречен ноль-символ, а слово не было считано, возвращает 0
 bool getWord(char *beginSearch, WordDescriptor *word) {
@@ -69,3 +63,15 @@ int areWordsEqual(WordDescriptor w1, WordDescriptor w2) {
         return 0;
     }
 }
+
+//Получает позиции начала и конца каждого слова строки
+void getBagOfWords(BagOfWords *bag, char *s) {
+    size_t word_counter = 0;
+    while (getWord(s, &(bag->words[word_counter]))) {
+        s = bag->words[word_counter].end;
+        word_counter++;
+    }
+    bag->size = word_counter;
+}
+
+

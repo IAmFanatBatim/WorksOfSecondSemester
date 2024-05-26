@@ -6,8 +6,26 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_STRING_SIZE 1000
+#define MAX_STRING_SIZE 2000
+#define MAX_N_WORDS_IN_STRING 100
+#define MAX_WORD_SIZE 20
 char _stringBuffer[MAX_STRING_SIZE + 1];
+
+//Структура, описывающая положение слова в строке
+typedef struct {
+    char *begin; // позиция начала слова
+    char *end; // позиция первого символа, после последнего символа
+} WordDescriptor;
+
+//Структура, описывающая положение нескольких слов в строке
+typedef struct BagOfWords {
+    WordDescriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} BagOfWords;
+
+BagOfWords _bag;
+BagOfWords _bag2;
+
 
 //Возвращает количество символов в строке, нулевой символ которой находится по указателю begin
 size_t strlen_(const char *begin);
