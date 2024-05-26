@@ -25,6 +25,14 @@ void test_alternatingWords_oneWordInEvery() {
     assertString(s_expected, s_result);
 }
 void test_alternatingWords_equalAmountDifferentSpaces() {
+    char s1[] = "I\tlike";
+    char s2[] = "draw\ncats";
+    char s_expected[] = "I draw like cats";
+    char s_result[MAX_STRING_SIZE] = "";
+    alternatingWords(s1, s2, s_result);
+    assertString(s_expected, s_result);
+}
+void test_alternatingWords_firstLonger() {
     char s1[] = "Hello there folks!";
     char s2[] = "everyone";
     char s_expected[] = "Hello everyone there folks!";
@@ -32,7 +40,7 @@ void test_alternatingWords_equalAmountDifferentSpaces() {
     alternatingWords(s1, s2, s_result);
     assertString(s_expected, s_result);
 }
-void test_alternatingWords_firstLonger() {
+void test_alternatingWords_firstShorter() {
     char s1[] = "I know";
     char s2[] = "wanna more than that";
     char s_expected[] = "I wanna know more than that";
@@ -40,16 +48,35 @@ void test_alternatingWords_firstLonger() {
     alternatingWords(s1, s2, s_result);
     assertString(s_expected, s_result);
 }
-void test_alternatingWords_firstShorter() {
-    char s[] = "apple,madam,cherry,ada";
-    assert(alternatingWords(s) == 2);
-}
 void test_alternatingWords() {
     test_alternatingWords_noWords();
     test_alternatingWords_oneWordInEvery();
     test_alternatingWords_equalAmountDifferentSpaces();
     test_alternatingWords_firstLonger();
     test_alternatingWords_firstShorter();
+}
+
+void alternatingWords(char *s1, char *s2, char *s_dest) {
+    WordDescriptor word1, word2;
+    bool isW1Found, isW2Found;
+    char *beginSearch1 = s1, *beginSearch2 = s2;
+    while ((isW1Found = getWord(beginSearch1, &word1)),
+            (isW2Found = getWord(beginSearch2, &word2)),
+            isW1Found || isW2Found) {
+        if (isW1Found) {
+            char *end_of_result = copy(word1.begin, word1.end, s_dest);
+            *end_of_result = ' ';
+            s_dest = end_of_result + 1;
+            beginSearch1 = word1.end;
+        } if (isW2Found) {
+            char *end_of_result = copy(word2.begin, word2.end, s_dest);
+            *end_of_result = ' ';
+            s_dest = end_of_result + 1;
+            beginSearch2 = word2.end;
+        }
+    }
+    s_dest--;
+    *s_dest = '\0';
 }
 
 int main() {
