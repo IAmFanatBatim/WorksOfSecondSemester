@@ -35,6 +35,25 @@ void test_areOrderedAlphabetically() {
     test_areOrderedAlphabetically_notOrdered();
 }
 
+bool areOrderedAlphabetically(char *s) {
+    bool result = true;
+    WordDescriptor previous_word, cur_word;
+    bool has_at_least_one_word = getWord(s, &previous_word);
+    if (!has_at_least_one_word) {
+        return result;
+    } else {
+        s = previous_word.end;
+    }
+    while (getWord(s, &cur_word)) {
+        if (areWordsEqual(previous_word, cur_word) > 0) {
+            result = false;
+        }
+        previous_word = cur_word;
+        s = cur_word.end;
+    }
+    return result;
+}
+
 int main() {
     test_areOrderedAlphabetically();
     printf("All is okay");
