@@ -60,6 +60,36 @@ void test_fillStringWithLessWordsFromAnother() {
     test_fillStringWithLessWordsFromAnother_oneEmpty();
 }
 
+void fillStringWithLessWordsFromAnother(char *s1, char *s2) {
+    char *read_1 = s1;
+    char *read_2 = s2;
+    char *write_1 = s1;
+    char *write_2 = s2;
+    WordDescriptor cur_word_1, cur_word_2;
+    while (getWord(read_1, &cur_word_1) && getWord(read_2, &cur_word_2)) {
+        read_1 = cur_word_1.end;
+        write_1 = cur_word_1.end;
+        read_2 = cur_word_2.end;
+        write_2 = cur_word_2.end;
+    }
+    while (getWord(read_1, &cur_word_1)) {
+        if (write_2 != s2) {
+            *write_2 = ' ';
+            write_2++;
+        }
+        write_2 = copy(cur_word_1.begin, cur_word_1.end, write_2);
+        read_1 = cur_word_1.end;
+    }
+    while (getWord(read_2, &cur_word_2)) {
+        if (write_1 != s1) {
+            *write_1 = ' ';
+            write_1++;
+        }
+        write_1 = copy(cur_word_2.begin, cur_word_2.end, write_1);
+        read_2 = cur_word_2.end;
+    }
+}
+
 int main() {
     test_fillStringWithLessWordsFromAnother();
 }
