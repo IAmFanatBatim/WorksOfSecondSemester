@@ -45,6 +45,27 @@ void test_removeCopiesOfLastWord() {
     test_removeCopiesOfLastWord_diverseWords();
 }
 
+void removeCopiesOfLastWord(char *s) {
+    WordDescriptor last_word;
+    bool was_last_word_gotten = getWordReverse(s + strlen_(s) - 1, s-1, &last_word);
+    char *read_ptr = s;
+    char *write_ptr = s;
+    if (was_last_word_gotten) {
+        WordDescriptor cur_word;
+        while (getWord(read_ptr, &cur_word)) {
+            if (areWordsEqual(cur_word, last_word) != 0) {
+                if (write_ptr != s) {
+                    *write_ptr = ' ';
+                    write_ptr++;
+                }
+                write_ptr = copy(cur_word.begin, cur_word.end, write_ptr);
+            }
+            read_ptr = cur_word.end;
+        }
+    }
+    *write_ptr = '\0';
+}
+
 int main() {
     test_removeCopiesOfLastWord();
 }
