@@ -46,7 +46,7 @@ void test_getWordBeforeFirstWordWithA_wordFoundACapital() {
     assertString("Lemon", got);
 
 }
-void test_reverseOrderWords() {
+void test_getWordBeforeFirstWordWithA() {
     test_getWordBeforeFirstWordWithA_noWords();
     test_getWordBeforeFirstWordWithA_noWordsWithA();
     test_getWordBeforeFirstWordWithA_firstWordWithA();
@@ -96,6 +96,6 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA(char *s, WordDesc
 }
 
 int main() {
-    test_reverseOrderWords();
+    test_getWordBeforeFirstWordWithA();
 }
 

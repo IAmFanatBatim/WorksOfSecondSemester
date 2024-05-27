@@ -87,4 +87,7 @@ void getBagOfWords(BagOfWords *bag, char *s) {
     bag->size = word_counter;
 }
 
+//Преобразовывает слово в строку, записывая ее по адресу destination
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
 
