@@ -1,42 +1,40 @@
 #include <ctype.h>
 #include "string_support_functions.c"
 
-//Определяет, есть ли в данной строке слова, составленные из одинакового набора букв
-bool areIdenticalLetterSetsInString(char *s);
 
 //<Автоматизированные тесты>
 
-void test_areIdenticalLetterSetsInString_noWords() {
+void test_areIdenticalWordsInString_noWords() {
     char s[] = "";
-    assert(areIdenticalLetterSetsInString(s) == 0);
+    assert(areIdenticalWordsInString(s) == 0);
 }
-void test_areIdenticalLetterSetsInString_oneWord() {
+void test_areIdenticalWordsInString_oneWord() {
     char s[] = "apple";
-    assert(areIdenticalLetterSetsInString(s) == 0);
+    assert(areIdenticalWordsInString(s) == 0);
 }
-void test_areIdenticalLetterSetsInString_noIdenticalLetterSets() {
+void test_areIdenticalWordsInString_noIdenticalWords() {
     char s[] = "apple lemon banana";
-    assert(areIdenticalLetterSetsInString(s) == 0);
+    assert(areIdenticalWordsInString(s) == 0);
 }
-void test_areIdenticalLetterSetsInString_hasIncludedLetterSets() {
-    char s[] = "apple lemon pal";
-    assert(areIdenticalLetterSetsInString(s) == 0);
+void test_areIdenticalWordsInString_hasIdenticalWords() {
+    char s[] = "apple lemon apple banana";
+    assert(areIdenticalWordsInString(s) == 1);
 }
-void test_areIdenticalLetterSetsInString_hasIdenticalLetterSets() {
-    char s[] = "apple lemon menol banana";
-    assert(areIdenticalLetterSetsInString(s) == 1);
+void test_areIdenticalWordsInString_hasMoreIdenticalWords() {
+    char s[] = "apple lemon apple apple";
+    assert(areIdenticalWordsInString(s) == 1);
 
 }
-void test_areIdenticalLetterSetsInString() {
-    test_areIdenticalLetterSetsInString_noWords();
-    test_areIdenticalLetterSetsInString_oneWord();
-    test_areIdenticalLetterSetsInString_noIdenticalLetterSets();
-    test_areIdenticalLetterSetsInString_hasIncludedLetterSets();
-    test_areIdenticalLetterSetsInString_hasIdenticalLetterSets();
+void test_areIdenticalWordsInString() {
+    test_areIdenticalWordsInString_noWords();
+    test_areIdenticalWordsInString_oneWord();
+    test_areIdenticalWordsInString_noIdenticalWords();
+    test_areIdenticalWordsInString_hasIdenticalWords();
+    test_areIdenticalWordsInString_hasMoreIdenticalWords();
 }
+
 
 int main() {
-    test_areIdenticalLetterSetsInString();
+    test_areIdenticalWordsInString();
     printf("All is okay");
 }
-

@@ -98,4 +98,25 @@ void wordDescriptorToString(WordDescriptor word, char *destination) {
     *destination = '\0';
 }
 
+//Сравнивает два символа для быстрой сортировки массива типа char
+int compare_chars(const void* a, const void* b) {
+    int arg1 = *(const char*)a;
+    int arg2 = *(const char*)b;
+    if (arg1 < arg2) return -1;
+    if (arg1 > arg2) return 1;
+    return 0;
+}
 
+//Определяет, есть ли в данной строке одинаковые слова
+bool areIdenticalWordsInString(char *s) {
+    getBagOfWords(&_bag, s);
+    bool has_equal = false;
+    for (int first_word_index = 0; first_word_index < _bag.size - 1 && !has_equal; first_word_index++) {
+        for (int second_word_index = first_word_index + 1; second_word_index < _bag.size && !has_equal; second_word_index++) {
+            if (areWordsEqual(_bag.words[first_word_index], _bag.words[second_word_index]) == 0) {
+                has_equal = true;
+            }
+        }
+    }
+    return has_equal;
+}
