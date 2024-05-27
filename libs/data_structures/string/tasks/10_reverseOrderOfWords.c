@@ -2,7 +2,7 @@
 #include <malloc.h>
 #include "string_support_functions.c"
 
-//преобразовывает строку, переставляя ее слов в обратном порядке
+//преобразовывает строку, переставляя ее слова в обратном порядке
 void reverseOrderOfWords(char *s);
 
 void test_reverseOrderOfWords_empty() {
