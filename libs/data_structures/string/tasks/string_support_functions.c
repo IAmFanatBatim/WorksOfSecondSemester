@@ -88,6 +88,14 @@ void getBagOfWords(BagOfWords *bag, char *s) {
 }
 
 //Преобразовывает слово в строку, записывая ее по адресу destination
-void wordDescriptorToString(WordDescriptor word, char *destination);
+void wordDescriptorToString(WordDescriptor word, char *destination) {
+    char *cur_word_character = word.begin;
+    while (cur_word_character != word.end) {
+        *destination = *cur_word_character;
+        cur_word_character++;
+        destination++;
+    }
+    *destination = '\0';
+}
 
 
