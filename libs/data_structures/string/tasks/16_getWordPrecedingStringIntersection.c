@@ -3,12 +3,12 @@
 
 typedef enum {
     FIRST_WORD_INTERSECTION,
-    NOT_FOUND_A_WORD_INTERSECTION,
+    NOT_FOUND_WORD_INTERSECTION,
     WORD_FOUND,
     EMPTY_FIRST_STRING
 } WordPrecedingStringIntersectionReturnCode;
 
-//Определяет последнее из слов первой строки, которое есть во второй строке.
+//Сохраняет в структуру w и выводит слово, предшествующее в строке s1 первому слову, встречающемуся в обеих строках.
 WordPrecedingStringIntersectionReturnCode getWordPrecedingStringIntersection(char *s1, char *s2, WordDescriptor *w);
 
 //<Автоматизированные тесты>
@@ -29,13 +29,13 @@ void test_getWordPrecedingStringIntersection_noWordsSecond() {
     char s1[] = "cherry";
     char s2[] = "";
     WordDescriptor word;
-    assert(getWordPrecedingStringIntersection(s1, s2, &word) == NOT_FOUND_A_WORD_INTERSECTION);
+    assert(getWordPrecedingStringIntersection(s1, s2, &word) == NOT_FOUND_WORD_INTERSECTION);
 }
 void test_getWordPrecedingStringIntersection_noCommonWords() {
     char s1[] = "cherry";
     char s2[] = "apple";
     WordDescriptor word;
-    assert(getWordPrecedingStringIntersection(s1, s2, &word) == NOT_FOUND_A_WORD_INTERSECTION);
+    assert(getWordPrecedingStringIntersection(s1, s2, &word) == NOT_FOUND_WORD_INTERSECTION);
 }
 void test_getWordPrecedingStringIntersection_commonWordNotFirst() {
     char s1[] = "cherry apple";
@@ -55,6 +55,7 @@ void test_getWordPrecedingStringIntersection_commonWordFirst() {
 
 }
 void test_getWordPrecedingStringIntersection() {
+    test_getWordPrecedingStringIntersection_noWords();
     test_getWordPrecedingStringIntersection_noWordsFirst();
     test_getWordPrecedingStringIntersection_noWordsSecond();
     test_getWordPrecedingStringIntersection_noCommonWords();
@@ -63,6 +64,45 @@ void test_getWordPrecedingStringIntersection() {
 }
 
 WordPrecedingStringIntersectionReturnCode getWordPrecedingStringIntersection(char *s1, char *s2, WordDescriptor *w) {
+    //WordDescriptor cur_word;
+    bool is_intersection_word_found = false;
+    bool is_another_word_found = false;
+
+    getBagOfWords(&_bag, s1);
+    getBagOfWords(&_bag2, s2);
+
+    for (int first_bag_index = 0; first_bag_index < _bag.size && !is_intersection_word_found; first_bag_index++) {
+        for (int second_bag_index = 0; second_bag_index< _bag2.size; second_bag_index++) {
+            if (areWordsEqual(_bag.words[first_bag_index], _bag2.words[second_bag_index]) == 0) {
+                is_intersection_word_found = true;
+                if (is_another_word_found) {
+                    *w = _bag.words[first_bag_index - 1];
+                }
+            }
+        }
+        if (!is_intersection_word_found) {
+            is_another_word_found = true;
+        }
+    }
+
+    if (is_intersection_word_found && is_another_word_found) {
+        char *cur_character_pointer = w->begin;
+        while (cur_character_pointer != w->end) {
+            printf("%c", *cur_character_pointer);
+            cur_character_pointer++;
+        }
+        printf("\n");
+        return WORD_FOUND;
+    } else if (is_intersection_word_found) {
+        printf("First word of first string is included in the second string\n");
+        return FIRST_WORD_INTERSECTION;
+    } else if (is_another_word_found) {
+        printf("There are no words in first string which included in the second string\n");
+        return NOT_FOUND_WORD_INTERSECTION;
+    } else {
+        printf("There are no words in the first string\n");
+        return EMPTY_FIRST_STRING;
+    }
 }
 
 int main() {
