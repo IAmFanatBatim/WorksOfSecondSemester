@@ -35,7 +35,21 @@ void test_areIdenticalWordsInString() {
     test_areIdenticalWordsInString_hasMoreIdenticalWords();
 }
 
+bool areIdenticalWordsInString(char *s) {
+    getBagOfWords(&_bag, s);
+    bool has_equal = false;
+    for (int first_word_index = 0; first_word_index < _bag.size - 1 && !has_equal; first_word_index++) {
+        for (int second_word_index = first_word_index + 1; second_word_index < _bag.size && !has_equal; second_word_index++) {
+            if (areWordsEqual(_bag.words[first_word_index], _bag.words[second_word_index]) == 0) {
+                has_equal = true;
+            }
+        }
+    }
+    return has_equal;
+}
+
 int main() {
     test_areIdenticalWordsInString();
+    printf("All is okay");
 }
 
