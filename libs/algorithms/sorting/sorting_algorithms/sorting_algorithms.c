@@ -54,3 +54,19 @@ void combSort(int *array, size_t size) {
         }
     }
 }
+
+void shellSort(int *array, size_t size) {
+    int step = size/2;
+    while (step > 0) {
+        for (int i = step; i < size; i++) {
+            int cur_el = array[i];
+            size_t cur_ind = i;
+            while (cur_ind > step-1 && array[cur_ind - step] > cur_el) {
+                array[cur_ind] = array[cur_ind - step];
+                cur_ind -= step;
+            }
+            array[cur_ind] = cur_el;
+        }
+        step /= 2;
+    }
+}
