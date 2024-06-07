@@ -1,0 +1,4 @@
+# ninja log v5
+4	269	7394571776413096	build.ninja	71c3b7e11255be56
+1	366	7394569090319763	CMakeFiles/sorting_algorithms.dir/sorting_algorithms.c.obj	cb5439763f2d250e
+368	547	7394569092154842	libsorting_algorithms.a	493da542e26ea6fb

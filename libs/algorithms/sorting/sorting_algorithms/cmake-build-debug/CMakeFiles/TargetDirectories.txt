@@ -1,0 +1,3 @@
+C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/sorting/sorting_algorithms/cmake-build-debug/CMakeFiles/sorting_algorithms.dir
+C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/sorting/sorting_algorithms/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/sorting/sorting_algorithms/cmake-build-debug/CMakeFiles/rebuild_cache.dir
