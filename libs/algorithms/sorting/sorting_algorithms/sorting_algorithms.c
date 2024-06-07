@@ -13,3 +13,15 @@ void bubbleSort(int *array, size_t size) {
         }
     }
 }
+
+void selectionSort(int *array, size_t size) {
+    for (size_t i = 0; i < size - 1; i++) {
+        size_t min_pos = i;
+        for (size_t j = i+1; j < size; j++) {
+            if (array[j] < array[min_pos]) {
+                min_pos = j;
+            }
+        }
+        swapVoid(&array[i], &array[min_pos], sizeof(int));
+    }
+}
