@@ -37,3 +37,20 @@ void insertionSort(int *array, size_t size) {
         array[cur_ind] = cur_el;
     }
 }
+
+void combSort(int *array, size_t size) {
+    int step = size - 1;
+    bool was_exchange_required = true;
+    while (step > 1 || was_exchange_required) {
+        was_exchange_required = false;
+        for (size_t i = 0; i < size - step; i++) {
+            if (array[i] > array[i+step]) {
+                swapVoid(&array[i], &array[i+step], sizeof(int));
+                was_exchange_required = true;
+            }
+        }
+        if (step > 1) {
+            step /= 1.24733;
+        }
+    }
+}
