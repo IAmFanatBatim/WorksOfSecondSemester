@@ -70,3 +70,57 @@ void shellSort(int *array, size_t size) {
         step /= 2;
     }
 }
+
+int getIByte_(int n, int i) {
+    int bite_module = (n >> (8*i)) & ((1<<8)-1);
+    if (i == 3) {
+        bool is_negative = n >> ((sizeof(int) * 8) - 1) & 1;
+        if (is_negative) {
+            return ~bite_module;
+        }
+    }
+    return bite_module;
+}
+
+void getMinMaxByte_(int *array, size_t size, int *min, int *max, int byte_ind) {
+    *min = getIByte_(array[0], byte_ind);
+    *max = getIByte_(array[0], byte_ind);
+    for (int i = 0; i < size; i++) {
+        if (getIByte_(array[i], byte_ind) < *min) {
+            *min = getIByte_(array[i], byte_ind);
+        } else if (getIByte_(array[i], byte_ind) > *max) {
+            *max = getIByte_(array[i], byte_ind);
+        }
+    }
+}
+
+void digitSort(int *array, size_t size) {
+    int *copy_array = (int*) calloc(size, sizeof(int));
+    for (int byte_ind = 0; byte_ind < 4; byte_ind++) {
+        int min, max;
+        getMinMaxByte_(array, size, &min, &max, byte_ind);
+        int k = max - min + 1;
+        int *count_array = (int*) calloc(k, sizeof(int));
+
+        for (int i = 0; i < size; i++) {
+            int cur_byte = getIByte_(array[i], byte_ind);
+            count_array[cur_byte-min]++;
+        }
+
+        int *prefix_count_array = (int*) calloc(k, sizeof(int));
+        for (int i = 1; i < k; i++) {
+            prefix_count_array[i] = prefix_count_array[i-1] + count_array[i-1];
+        }
+
+        memcpy(copy_array, array, sizeof(int)*size);
+        for (int i = 0; i < size; i++) {
+            int cur_byte = getIByte_(copy_array[i], byte_ind);
+            array[prefix_count_array[cur_byte  - min]] = copy_array[i];
+            prefix_count_array[cur_byte - min]++;
+        }
+
+        free(count_array);
+        free(prefix_count_array);
+    }
+    free(copy_array);
+}
