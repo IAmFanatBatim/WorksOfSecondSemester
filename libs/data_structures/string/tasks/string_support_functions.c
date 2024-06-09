@@ -1,6 +1,6 @@
 #include "C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\data_structures\string\string_.c"
 
-//Выводит в поток ошибок, что  тест выполнен успешно, если они равны
+//Выводит в поток ошибок, чтовыполняемой функции, тест выполнен успешно, если они равны
 //в противном случае выводит в поток ошибок информацию о том, в каком файле, функции и строке произошло расхождение ожидаемого результата с реальным
 void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line) {
     if (strcmp(expected, got)) {

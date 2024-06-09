@@ -8,7 +8,7 @@ CMake Error at libs/data_structures/CMakeLists.txt:11 (add_library):
   policy CMP0002 for more details.
 
 
-CMake Error at libs/data_structures/CMakeLists.txt:23 (target_link_libraries):
+CMake Error at libs/data_structures/CMakeLists.txt:22 (target_link_libraries):
   Cannot specify link libraries for target "project" which is not built by
   this project.
 

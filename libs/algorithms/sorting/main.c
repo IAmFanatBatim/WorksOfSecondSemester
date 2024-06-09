@@ -3,6 +3,8 @@
 #include <stdbool.h>
 #include <time.h>
 #include <C:\Users\sovac\Desktop\ОП, преимущественно лабы\second_semester\libs\algorithms\array\array.c>
+#include "sorting_algorithms\sorting_algorithms.c"
+#include "generating_algorithms\generating_algorithms.c"
 
 #define TIME_TEST(testCode, time) { \
 clock_t start_time = clock(); \
@@ -28,7 +30,7 @@ typedef struct GeneratingFunc {
 void checkTime(void(*sortFunc)(int *, size_t), void (*generateFunc)(int *, size_t), size_t size, char *experimentName) {
     static size_t runCounter = 1;
 // генерация последовательности
-    static int innerBuffer[100000];
+    static int innerBuffer[5000000];
     generateFunc(innerBuffer, size);
     printf("Run #%zu| ", runCounter++);
     printf("Name: %s\n", experimentName);
@@ -39,11 +41,12 @@ void checkTime(void(*sortFunc)(int *, size_t), void (*generateFunc)(int *, size_
               }, time);
 
     printf("Status: ");
-    if (isOrdered(innerBuffer, size)) {
+    if (isNonDescendingSorted(innerBuffer, size)) {
         printf("OK! Time: %.3f s.\n", time);
 // запись в файл
+//C:/Users/sovac/Desktop/ОП, преимущественно лабы/second_semester/libs/algorithms/sorting/
         char filename[256];
-        sprintf(filename, "./data/%s.csv", experimentName);
+        sprintf(filename, "cmake-build-debug/data/%s.csv", experimentName);
         FILE *f = fopen(filename, "a");
         if (f == NULL) {
             printf("FileOpenError %s", filename);
@@ -62,18 +65,23 @@ void checkTime(void(*sortFunc)(int *, size_t), void (*generateFunc)(int *, size_
 void timeExperiment() {
 // описание функций сортировки
     SortFunc sorts[] = {
+            //{bubbleSort, "bubbleSort"},
             {selectionSort, "selectionSort"},
             {insertionSort, "insertionSort"},
-// вы добавите свои сортировки
+            {combSort, "combSort"},
+            {shellSort, "shellSort"},
+            {digitSort, "digitSort"}
     };
     const unsigned FUNCS_N = ARRAY_SIZE(sorts);
 // описание функций генерации
     GeneratingFunc generatingFuncs[] = {
             {generateRandomArray,      "random"},
 // генерируется массив 0, 1, 2, ..., n - 1
-            {generateOrderedArray,     "ordered"},
+            //{generateOrderedArray,     "ordered"},
 // генерируется массив n - 1, n - 2, ..., 0
-            {generateOrderedBackwards, "orderedBackwards"}
+            //{generateOrderedBackwards, "orderedBackwards"},
+            //{generateOrderedWithNegative, "orderedWithNegative"},
+            //{generateOrderedBackwardsWithNegative, "orderedBackwardsWithNegative"}
     };
     const unsigned CASES_N = ARRAY_SIZE(generatingFuncs);
 // запись статистики в файл

@@ -11,7 +11,7 @@ typedef struct vector {
 } vector;
 
 //Создаёт и возвращает пустой вектор, в котором зарезервирована память для n элементов
- vector createVector(size_t n);
+vector createVector(size_t n);
 
 //изменяет количество памяти, отведенной для хранения вектора, так, чтобы он вмещал в себя newCapacity элементов
 void reserve(vector *v, size_t newCapacity);
