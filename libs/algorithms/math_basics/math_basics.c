@@ -21,6 +21,15 @@ int cmp_long_long(const void* a, const void* b) {
     return 0;
 }
 
+int getDigitsAmount(int x) {
+    int result = 0;
+    while (x > 0) {
+        x /= 10;
+        result++;
+    }
+    return result;
+}
+
 int min2(const int x, const int y) {
     return (x < y) ? x : y;
 }

@@ -249,12 +249,12 @@ position getMaxValuePos(matrix m) {
 }
 
 //возвращает матрицу размера nRows на nCols, построенную из элементов массива a
-matrix createMatrixFromArray(const int *a, size_t nRows, size_t nCols) {
+matrix createMatrixFromArray(const int *values, size_t nRows, size_t nCols) {
     matrix m = getMemMatrix(nRows, nCols);
     int k = 0;
     for (int row_ind = 0; row_ind < nRows; row_ind++) {
         for (int col_ind = 0; col_ind < nCols; col_ind++) {
-            m.values[row_ind][col_ind] = a[k++];
+            m.values[row_ind][col_ind] = values[k++];
         }
     }
     return m;

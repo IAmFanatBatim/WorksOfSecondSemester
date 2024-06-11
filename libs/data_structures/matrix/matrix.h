@@ -85,8 +85,8 @@ position getLeftMin(matrix m);
 //возвращает позицию первого, если идти по матрице сверху вниз и по ее строкам слева направо, максимального элемента матрицы m
 position getMaxValuePos(matrix m);
 
-//возвращает матрицу размера nRows на nCols, построенную из элементов массива a
-matrix createMatrixFromArray(const int *a, size_t nRows, size_t nCols);
+//возвращает матрицу размера nRows на nCols, построенную из элементов массива values
+matrix createMatrixFromArray(const int *values, size_t nRows, size_t nCols);
 
 // возвращает указатель на нулевую матрицу массива из nMatrices матриц, размещенных
 //в динамической памяти, построенных из элементов массива a

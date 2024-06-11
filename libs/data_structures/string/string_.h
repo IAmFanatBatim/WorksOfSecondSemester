@@ -26,6 +26,16 @@ typedef struct BagOfWords {
 BagOfWords _bag;
 BagOfWords _bag2;
 
+typedef struct GlossWord {
+    char word[MAX_WORD_SIZE];
+    size_t amount_of_occurrences;
+} GlossWord;
+
+typedef struct Glossarium {
+    GlossWord words[MAX_N_WORDS_IN_STRING];
+    size_t amount_of_words;
+} Glossarium;
+
 
 //Возвращает количество символов в строке, нулевой символ которой находится по указателю begin
 size_t strlen_(const char *begin);
@@ -69,6 +79,50 @@ char* copyIf(char *beginSource, const char *endSource, char *beginDestination, i
 //удовлетворяющие функции-предикату f. Функция возвращает значение beginDestination по окончанию работы функции.
 //По окончанию работы функции ноль-символ не записывается.
 char* copyIfReverse(char *rbeginSource, const char *rendSource, char *beginDestination, int (*f)(int));
+
+//Выводит в поток ошибок, что для выполняемой функции, тест выполнен успешно, если они равны
+//в противном случае выводит в поток ошибок информацию о том, в каком файле, функции и строке произошло расхождение ожидаемого результата с реальным
+void assertString(const char *expected, char *got, char const *fileName, char const *funcName, int line);
+
+//Возвращает указатель на первый нулевой символ, встреченный в строке, на начало которой указывает s
+char* getEndOfString(char *s);
+
+//Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного после указателя beginSearch
+//Если был встречен ноль-символ, а слово не было считано, возвращает 0
+bool getWord(char *beginSearch, WordDescriptor *word);
+
+//Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного до указателя rbegin,
+//но не выходящего за рамки левой границы rend; если слово не было считано, возвращает 0
+bool getWordReverseB(char *rbegin, char *rend, WordDescriptor *word);
+
+//Возвращает 1 и вписывает в структуру word указатели на начало и конец первого слова, найденного до указателя rbegin,
+//но не выходящего за рамки левой границы rend; если слово не было считано, возвращает 0
+bool getWordReverse(char *rbegin, char *rend, WordDescriptor *word);
+
+//Возвращает отрицательное значение, если слово w1 располагается до w2 в лексикографическом порядке (как в словаре),
+//значение 0, если они равны, иначе – положительное значение.
+int areWordsEqual(WordDescriptor w1, WordDescriptor w2);
+
+//Получает позиции начала и конца каждого слова строки
+void getBagOfWords(BagOfWords *bag, char *s);
+
+//Преобразовывает слово в строку, записывая ее по адресу destination
+void wordDescriptorToString(WordDescriptor word, char *destination);
+
+//Сравнивает два символа для быстрой сортировки массива типа char
+int compare_chars(const void* a, const void* b);
+
+//Определяет, есть ли в данной строке одинаковые слова
+bool areIdenticalWordsInString(char *s);
+
+//Сортирует слова в мешке слов по алфавиту
+void sortBagOfWords(BagOfWords *source_bag);
+
+//Получает структуру "словарь" по заданному мешку слов
+void getGlossBySortedBag(BagOfWords *source_bag, Glossarium *dest_glossarium);
+
+//Выводит структуру "словарь"
+void printGloss(Glossarium gloss);
 
 #endif
 
